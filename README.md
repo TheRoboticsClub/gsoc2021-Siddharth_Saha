@@ -2,7 +2,7 @@
 
 **Title**: Robotics Academy --- ROS2-RADI and Amazon warehouse exercise in web-based template for ROS2
 
-[Project Description](https://summerofcode.withgoogle.com/dashboard/project/5887913654484992/details/)
+[Project Description](https://summerofcode.withgoogle.com/projects/#5887913654484992)
 
 
 

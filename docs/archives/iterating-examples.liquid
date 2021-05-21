@@ -1,0 +1,33 @@
+
+            {% for post in site.posts %}
+
+              {% if post.draft != true %}
+                <span class="blog-post-date">{{ post.date | date: "%b %-d, %y" }}</span> »
+                <a href="{{ post.url | replace:'.html','' | prepend: site.baseurl }}" class="blog-post-title">
+                  {{ post.title }}
+                </a>
+                <br />
+
+              {% endif %}
+
+            {% endfor %}
+
+
+
+
+          {% for category in site.categories %}
+
+            <h2>{{ category[0] | replace:'-',' ' }}</h2>
+            <p class="blog-post-list">
+              {% for post in category[1] %}                
+                {% if post.draft != true %}
+                  <span class="blog-post-date">{{ post.date | date: "%b %-d, %y" }}</span> »
+                  <a href="{{ post.url | replace:'.html','' | prepend: site.baseurl }}" class="blog-post-title">
+                    {{ post.title }}
+                  </a>
+                  <br />
+                {% endif %}
+              {% endfor %}
+            </p>
+
+          {% endfor %}

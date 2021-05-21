@@ -1,0 +1,65 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1 social-links">
+        <h4>CONTACT</h4>
+
+        {% for contact in site.footer.contact %}
+
+          {% comment %}{% assign contact_icon_path = "/assets/img/icons/" | append: contact.name | downcase | append: ".png" | absolute_url %}
+          <img
+            src="{{ contact_icon_path }}"
+            alt="{{ contact.name | downcase }}"
+          />{% endcomment %}
+          <i class="{{ contact.icon | downcase }}" aria-hidden="true"></i>
+          <a href="{{ contact.link }}" id="{{ contact.name | downcase }}-link"  target="_blank">
+            {% if contact.value and contact.value != "" and contact.value != nil %}
+              {{ contact.value }}
+            {% else %}
+              {{ contact.name }}
+            {% endif %}
+          </a>
+          <br />
+
+        {% endfor %}
+        <i class="fa fa-copyright" aria-hidden="true"></i> trunc8, Eliott Vincent
+      </div>
+
+      <div class="footer-col footer-col-2 social-links">
+        <h4>FOLLOW</h4>
+
+        {% for follow in site.footer.follow %}
+          <span class="wrap-link">
+
+            {% comment %}{% assign follow_icon_path = "/assets/img/icons/" | append: follow.name | downcase | append: ".png" | absolute_url %}
+            <img
+              src="{{ follow_icon_path }}"
+              alt="{{ follow.name | downcase }}"
+            />{% endcomment %}
+            {% comment %}
+              Courtesy:
+              https://stackoverflow.com/questions/25797627/why-is-font-awesome-not-working-on-my-jekyll-built-github-site
+            {% endcomment %}
+            <i class="fa fa-{{ follow.name | downcase }}" aria-hidden="true"></i>
+            <a href="{{ follow.link }}" target="_blank">
+              {% if follow.value and follow.value != "" and follow.value != nil %}
+                {{ follow.value }}
+              {% else %}
+                {{ follow.name }}
+              {% endif %}
+            </a>
+          </span>
+
+          {% assign mod = forloop.index | modulo: 2 %} {% if mod == 0 %}
+            <br />
+          {% endif %}
+
+        {% endfor %}
+      </div>
+
+      
+    </div>
+  </div>
+</footer>
+
+{% include wechat-widget.html %}

@@ -1,0 +1,73 @@
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+title: Siddharth Saha
+description: >- # this means to ignore newlines until "baseurl:"
+  A minimal Homepage.
+# baseurl: "/bay" # the subpath of the site
+url: "https://theroboticsclub.github.io/gsoc2021-Siddharth_Saha" # the base hostname & protocol for the site
+og_image: /assets/img/profile-pic.jpg
+# google_analytics: "UA-193570686-1"
+
+permalink: /:year/:month/:day/:title
+
+header:
+  pages:
+    - name: Home
+      slug: /
+    # - name: Work
+    # - name: CV
+    #   slug: cv/Siddharth-Saha-CV.pdf
+    - name: Blog
+
+footer:
+  contact:
+    - name: Email
+      value: sahasiddharth611@outlook.com
+      link: mailto:sahasiddharth611@outlook.com
+      icon: fa fa-envelope
+    - name: Homepage
+      value: Personal Blogsite
+      link: https://trunc8.github.io
+      icon: fa fa-globe
+  follow:
+    - name: GitHub
+      link: http://github.com/trunc8
+      value: trunc8
+    - name: Facebook
+      link: http://facebook.com/sahasiddharth611
+    - name: Twitter
+      link: http://twitter.com/trunc8s
+      value: "@trunc8s"
+    - name: LinkedIn
+      link: http://linkedin.com/in/sahasiddharth611
+    - name: RSS
+      link: /feed.xml
+    - name: YouTube
+      link: https://www.youtube.com/channel/UCuFFiiiCyaLEBVkKoUevKxg
+
+# Build settings
+timezone: Asia/Kolkata
+markdown: kramdown
+sass:
+    style: :compressed
+plugins:
+  - jekyll-feed
+
+# Excluded items
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - feed.xml
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Used for defeating caching
+version: 1
+
+

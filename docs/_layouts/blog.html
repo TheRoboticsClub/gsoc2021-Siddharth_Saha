@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+
+  <body>
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="blog">
+          <h1 class="page-heading">{{ page.title }}</h1>
+          {{ content }}
+
+          <p class="blog-post-list">            
+            {% for post in site.posts %}
+              {% if post.draft != true %}
+                <span class="blog-post-date">{{ post.date | date: "%b %-d, %y" }}</span> »
+                <a href="{{ post.url }}" class="blog-post-title">
+                  {{ post.title }}
+                </a>
+                <br />
+              {% endif %}
+            {% endfor %}
+          </p>
+
+
+        </div>
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    {% include foot.html %}
+  </body>
+</html>

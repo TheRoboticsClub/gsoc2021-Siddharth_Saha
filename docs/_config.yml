@@ -9,7 +9,7 @@ url: "https://theroboticsclub.github.io" # the base hostname & protocol for the 
 og_image: /assets/img/profile-pic.jpg
 # google_analytics: "UA-193570686-1"
 
-permalink: /:year/:month/:day/:title
+# permalink: /:year/:month/:day/:title
 
 header:
   pages:

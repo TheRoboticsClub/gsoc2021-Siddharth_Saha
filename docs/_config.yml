@@ -4,12 +4,12 @@
 title: Siddharth Saha
 description: >- # this means to ignore newlines until "baseurl:"
   A minimal Homepage.
-# baseurl: "/bay" # the subpath of the site
+baseurl: "/gsoc2021-Siddharth_Saha" # the subpath of the site
 url: "https://theroboticsclub.github.io" # the base hostname & protocol for the site
 og_image: /assets/img/profile-pic.jpg
 # google_analytics: "UA-193570686-1"
 
-# permalink: /:year/:month/:day/:title
+permalink: /:year/:month/:day/:title
 
 header:
   pages:

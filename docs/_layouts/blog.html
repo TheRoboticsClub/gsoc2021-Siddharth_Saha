@@ -15,7 +15,7 @@
             {% for post in site.posts %}
               {% if post.draft != true %}
                 <span class="blog-post-date">{{ post.date | date: "%b %-d, %y" }}</span> »
-                <a href="{{ post.url }}" class="blog-post-title">
+                <a href="{{ post.url | replace:'.html','' | prepend: site.baseurl }}" class="blog-post-title">
                   {{ post.title }}
                 </a>
                 <br />

@@ -1,6 +1,6 @@
 # Google Summer of Code \'21 @JdeRobot
 
-**Title**: Robotics Academy --- ROS2-RADI and Amazon warehouse exercise in web-based template for ROS2
+**Title**: Robotics Academy &mdash; ROS2-RADI and Amazon warehouse exercise in web-based template for ROS2
 
 [Project Description](https://summerofcode.withgoogle.com/projects/#5887913654484992)
 

@@ -11,3 +11,6 @@ og_image: /assets/img/content/gsoc/first-post/Banner.png
 <br />
 
 Super excited!
+<br />
+[Project description](https://summerofcode.withgoogle.com/projects/#5887913654484992)  
+[GitHub repository](https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha)  

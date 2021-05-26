@@ -1,0 +1,10 @@
+
+# ROS related
+alias cb='cd ~/colcon_ws; colcon build --symlink-install; cd -'
+alias ss="source ~/colcon_ws/install/setup.zsh"
+alias tf='cd /var/tmp && rosrun tf view_frames && op frames.pdf && cd -'
+
+# convenience commands
+alias sz="source ~/.zshrc"
+alias ez="sudo vim ~/.zshrc"
+alias apt="sudo apt"

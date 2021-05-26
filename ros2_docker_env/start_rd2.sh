@@ -1,0 +1,23 @@
+#!/bin/sh
+
+docker build -t rd2-base -f base.Dockerfile .
+
+docker build -t rd2-tools -f tools.Dockerfile .
+
+docker build -t rd2-wrapper -f wrapper.Dockerfile .
+
+DOCKER_H=/home/trunc8d
+docker run -it \
+      --rm \
+      --net=host \
+      --privileged \
+      --name rd2_container \
+      --gpus all \
+      -e DISPLAY \
+      -e XAUTHORITY=/tmp/.Xauthority \
+      -v ${XAUTHORITY}:/tmp/.Xauthority \
+      -v /tmp/.X11-unix:/tmp/.X11-unix \
+      -v ~/gsoc2021-Siddharth_Saha/colcon_ws:${DOCKER_H}/colcon_ws \
+      -v ~/gsoc2021-Siddharth_Saha/.persistent_zsh_history:${DOCKER_H}/.zsh_history \
+      -v ~/gsoc2021-Siddharth_Saha/shared-directory-docker:${DOCKER_H}/shared-directory \
+      rd2-wrapper

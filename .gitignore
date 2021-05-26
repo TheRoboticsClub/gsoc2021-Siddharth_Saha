@@ -1,4 +1,5 @@
 # Files
+.persistent_zsh_history
 
 # Directories
 build/

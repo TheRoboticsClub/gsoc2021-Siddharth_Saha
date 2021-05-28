@@ -11,19 +11,18 @@
           <h1 class="page-heading">{{ page.title }}</h1>
           {{ content }}
 
-          <p class="blog-post-list">            
-            {% for post in site.posts %}
-              {% if post.draft != true %}
-                <span class="blog-post-date">{{ post.date | date: "%b %-d, %y" }}</span> »
-                <a href="{{ post.url | replace:'.html','' | prepend: site.baseurl }}" class="blog-post-title">
-                  {{ post.title }}
-                </a>
-                <br />
-              {% endif %}
-            {% endfor %}
-          </p>
+          <h2>Milestones</h2>
+          {% assign category = "milestones" %}
+          {% include category-posts.html %}
 
+          <h2>Scribbles</h2>
+          {% assign category = "" %}
+          {% include category-posts.html %}
 
+          <h2>Minutes</h2>
+          {% assign category = "minutes" %}
+          {% include category-posts.html %}
+          
         </div>
       </div>
     </div>

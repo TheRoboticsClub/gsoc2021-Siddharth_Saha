@@ -4,13 +4,14 @@ title:  "Understanding ROS2 components"
 date:   2021-05-26 16:18:00 +0530
 blurb: ""
 og_image: /assets/img/content/placeholder-img/Banner.jpg
+category: ""
 ---
 
 <img src="{{ "/assets/img/content/placeholder-img/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>
 <br />
 <br />
 
-### All about colcon
+### Understanding colcon
 Colcon stands for **collective construction**. It automates the process of building, testing and using multiple software packages. [^1]
 
 #### Use of `--symlink-install` in colcon build [^2]
@@ -23,6 +24,11 @@ Colcon stands for **collective construction**. It automates the process of build
     + That is the same as if you would source `/opt/ros/foxy/(local_)setup.zsh` first and then `~/ws/install/local_setup.zsh`
 - In simpler words, if you source `local_setup.zsh` of the overlay, it will only consider the packages available in the overlay when adding to the environment. `setup.zsh` will source the underlay and then the overlay, giving you an environment with both workspaces in it.
 
+### Learning about Docker
+What does `xhost +"local:docker@"` do?  
+This permits the *docker* user on the local machine to connect to X windows display.
+
+This is usually required in intel machines. For nvidia systems, mounting `/tmp/.X11-unix` as a volume suffices.
 
 
 <br/>

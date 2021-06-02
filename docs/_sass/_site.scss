@@ -36,7 +36,12 @@
   }
 
   span.wrap-link {
-    width: 35%;
+    .contact {
+      width: 95%;
+    }
+    .follow{
+      width: 35%;
+    }
     float: left;
     display: block;
     margin-right: 2px;

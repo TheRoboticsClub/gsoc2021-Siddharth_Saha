@@ -5,31 +5,32 @@
         <h4>CONTACT</h4>
 
         {% for contact in site.footer.contact %}
-
-          {% comment %}{% assign contact_icon_path = "/assets/img/icons/" | append: contact.name | downcase | append: ".png" | absolute_url %}
-          <img
-            src="{{ contact_icon_path }}"
-            alt="{{ contact.name | downcase }}"
-          />{% endcomment %}
-          <i class="{{ contact.icon | downcase }}" aria-hidden="true"></i>
-          <a href="{{ contact.link }}" id="{{ contact.name | downcase }}-link"  target="_blank">
-            {% if contact.value and contact.value != "" and contact.value != nil %}
-              {{ contact.value }}
-            {% else %}
-              {{ contact.name }}
-            {% endif %}
-          </a>
+          <span class="wrap-link contact">
+            <i class="{{ contact.icon | downcase }}" aria-hidden="true"></i>
+            <a href="{{ contact.link }}" id="{{ contact.name | downcase }}-link"  target="_blank">
+              {% if contact.value and contact.value != "" and contact.value != nil %}
+                {{ contact.value }}
+              {% else %}
+                {{ contact.name }}
+              {% endif %}
+            </a>
+          </span>
           <br />
 
         {% endfor %}
-        <i class="fa fa-copyright" aria-hidden="true"></i> trunc8, Eliott Vincent
+
+        <span class="wrap-link contact">
+          <i class="fa fa-copyright" aria-hidden="true"></i> trunc8, Eliott Vincent
+        </span>
+        <br />
+
       </div>
 
       <div class="footer-col footer-col-2 social-links">
         <h4>FOLLOW</h4>
 
         {% for follow in site.footer.follow %}
-          <span class="wrap-link">
+          <span class="wrap-link follow">
 
             {% comment %}{% assign follow_icon_path = "/assets/img/icons/" | append: follow.name | downcase | append: ".png" | absolute_url %}
             <img

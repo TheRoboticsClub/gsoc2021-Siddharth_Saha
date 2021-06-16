@@ -1,5 +1,6 @@
 # Files
 .persistent_zsh_history
+*.log
 
 # Directories
 build/

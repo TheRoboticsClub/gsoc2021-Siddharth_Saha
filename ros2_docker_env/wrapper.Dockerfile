@@ -2,7 +2,8 @@
 # or requirements that should be easily editable
 FROM rd2-tools
 
-
+RUN echo "toor\n" | sudo -S apt-get install -y \
+    ros-foxy-bondcpp
 
 # Config files
 COPY .aliases /home/$USER_NAME/.aliases

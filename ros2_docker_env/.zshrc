@@ -115,8 +115,12 @@ export TURTLEBOT3_MODEL=waffle
 
 source /opt/ros/foxy/setup.zsh
 source /usr/share/colcon_cd/function/colcon_cd.sh
-# source ~/colcon_ws/install/setup.zsh
+export _colcon_cd_root=~/colcon_ws
 source /usr/share/gazebo-11/setup.sh
+
+# export AMAZON_ROBOT_PATH=~/colcon_ws/src/CustomRobots/amazon_robot
+export AMAZON_ROBOT_PATH=~/shared-directory/exercise_ws/src/CustomRobots/amazon_robot
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:${AMAZON_ROBOT_PATH}/amazon_robot_gazebo/models:${AMAZON_ROBOT_PATH}/aws-robomaker-small-warehouse-world/models
 
 
 # Vim extension to the shell

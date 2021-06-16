@@ -1,0 +1,9 @@
+[submodule "shared-directory-docker/nav2_ws/src/navigation2"]
+	path = shared-directory-docker/nav2_ws/src/navigation2
+	url = https://github.com/ros-planning/navigation2.git
+	branch = foxy-devel
+
+[submodule "shared-directory-docker/exercise_ws/src/CustomRobots"]
+	path = shared-directory-docker/exercise_ws/src/CustomRobots
+	url = https://github.com/JdeRobot/CustomRobots.git
+	branch = foxy-devel

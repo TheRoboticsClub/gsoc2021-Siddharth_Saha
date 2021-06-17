@@ -17,6 +17,18 @@
 1. (tmux shortcut- Press `Ctrl+B followed by -`)
 1. `ros2 run demo_nodes_py listener`
 
+### Demo of the Amazon warehouse world
+1. `cd ~/gsoc2021-Siddharth_Saha`
+1. `git submodule update --init --recursive`
+1. `./start_rd2.sh`
+1. `cd shared-directory/nav2_ws`
+1. `colcon build`
+1. `source install/local_setup.zsh`
+1. `cd ../exercise_ws`
+1. `colcon build`
+1. `source install/local_setup.zsh`
+1. `ros2 launch amazon_robot_bringup amazon_robot_in_aws_world.py`
+
 ### Author(s)
 
 * **Siddharth Saha** - [trunc8](https://github.com/trunc8)

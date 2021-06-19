@@ -15,3 +15,4 @@ Super excited!
 <br />
 [Project description](https://summerofcode.withgoogle.com/projects/#5887913654484992)  
 [GitHub repository](https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha)  
+[GitHub Kanban board](https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/projects/1)  

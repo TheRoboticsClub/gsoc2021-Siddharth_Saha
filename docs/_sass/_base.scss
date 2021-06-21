@@ -133,7 +133,7 @@ blockquote {
   padding-left: $spacing-unit / 2;
   font-size: 100%;
   letter-spacing: -0.5px;
-  font-style: italic;
+  font-style: normal;
 
   > :last-child {
     margin-bottom: 0;
@@ -143,12 +143,20 @@ blockquote {
 /**
  * Code formatting
  */
-pre,
-code {
-  font-size: 15px;
+
+// Kinda hacky. I want inline code to have light background.
+// Performed inspect element and figured that this
+// captured only the inline code
+code.highlighter-rouge {
   border: 1px solid $grey-color-light;
   border-radius: 3px;
   background-color: #eef;
+}
+
+pre,
+code {
+  font-size: 15px;
+  border: 2px solid $grey-color-dark;
 }
 
 code {

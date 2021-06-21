@@ -86,3 +86,157 @@ Step 13/74 : RUN curl -fsSL -O https://s3.amazonaws.com/virtualgl-pr/dev/linux/v
 curl: (22) The requested URL returned error: 404 Not Found
 The command '/bin/sh -c curl -fsSL -O https://s3.amazonaws.com/virtualgl-pr/dev/linux/virtualgl_${VIRTUALGL_VERSION}_amd64.deb &&     curl -fsSL -O https://s3.amazonaws.com/virtualgl-pr/dev/linux/virtualgl32_${VIRTUALGL_VERSION}_amd64.deb &&     apt-get update && apt-get install -y --no-install-recommends ./virtualgl_${VIRTUALGL_VERSION}_amd64.deb ./virtualgl32_${VIRTUALGL_VERSION}_amd64.deb &&     rm virtualgl_${VIRTUALGL_VERSION}_amd64.deb virtualgl32_${VIRTUALGL_VERSION}_amd64.deb &&     chmod u+s /usr/lib/libvglfaker.so &&     chmod u+s /usr/lib/libdlfaker.so &&     chmod u+s /usr/lib32/libvglfaker.so &&     chmod u+s /usr/lib32/libdlfaker.so &&     chmod u+s /usr/lib/i386-linux-gnu/libvglfaker.so &&     chmod u+s /usr/lib/i386-linux-gnu/libdlfaker.so &&     curl -fsSL -O https://s3.amazonaws.com/turbovnc-pr/dev/linux/turbovnc_${TURBOVNC_VERSION}_amd64.deb &&     apt-get update && apt-get install -y --no-install-recommends ./turbovnc_${TURBOVNC_VERSION}_amd64.deb &&     rm turbovnc_${TURBOVNC_VERSION}_amd64.deb &&     rm -rf /var/lib/apt/lists/* &&     echo -e "no-remote-connections\nno-httpd\nno-x11-tcp-connections\nno-pam-sessions\npermitted-security-types = None, VNC, otp" > /etc/turbovncserver-security.conf' returned a non-zero code: 22
 ```
+
+<br/>
+
+`docker run -it -p 8000:8000 -p 8080:8080 -p 7681:7681 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 jde_image ./start.sh`
+
+
+### Melodic manager.py
+```sh
+docker run -it \
+      --rm \
+      --name=jde_container \
+      -p 8080:8080 -p 7681:7681 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/RoboticsAcademy:/RoboticsAcademy \
+      jde_image python3.8 manager.py
+```
+
+### Noetic manager-noetic.py
+```sh
+docker run -it \
+      --rm \
+      --name=noetic_jde_container \
+      -p 8080:8080 -p 7681:7681 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/RoboticsAcademy:/RoboticsAcademy \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/RoboticsAcademy/scripts/manager-noetic.py:/manager-noetic.py \
+      noetic_jde_image python3.8 manager-noetic.py
+```
+
+### Noetic bash
+```sh
+docker run -it \
+      --rm \
+      --name=noetic_jde_container \
+      -p 8080:8080 -p 7681:7681 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/RoboticsAcademy:/RoboticsAcademy \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/RoboticsAcademy/scripts/manager-noetic.py:/manager-noetic.py \
+      noetic_jde_image bash
+```
+
+### Noetic no mounting
+```sh
+docker run -it \
+      --rm \
+      --name=noetic_jde_container \
+      -p 8080:8080 -p 7681:7681 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 \
+      noetic_jde_image python3.8 manager-noetic.py
+```
+
+### Noetic RADI 3.1.0 (with mounting)
+```sh
+docker run -it \
+      --rm \
+      -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/myRoboticsAcademy/exercises/static/exercises/follow_line:/RoboticsAcademy/exercises/follow_line \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/myRoboticsAcademy/exercises/templates:/RoboticsAcademy/exercises/templates \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/myRoboticsAcademy/scripts/manager-3.1.py:/manager-3.1.py \
+      noetic-radi ./start-3.1.sh
+```
+
+### Noetic RADI 3.1.0 (no mounting)
+```sh
+docker run -it \
+      --rm \
+      -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 \
+      noetic-radi ./start-3.1.sh
+
+```
+
+### Foxy (with mounting)
+```sh
+docker run -it \
+      --rm \
+      --name foxy_radi_container \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/myRoboticsAcademy:/RoboticsAcademy \
+      -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 \
+      foxy-radi bash
+```
+
+### Foxy (with privileged)
+```sh
+docker run -it \
+      --rm \
+      --net=host \
+      --privileged \
+      --name foxy_radi_container \
+      --gpus all \
+      -e DISPLAY \
+      -e XAUTHORITY=/tmp/.Xauthority \
+      -v ${XAUTHORITY}:/tmp/.Xauthority \
+      -v /tmp/.X11-unix:/tmp/.X11-unix \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/myRoboticsAcademy:/RoboticsAcademy \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/.gazebo:/root/.gazebo \
+      -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 \
+      foxy-radi bash
+
+
+cd /RoboticsAcademy/scripts && ./start.sh
+
+
+```
+
+### Developer's commands (Antequated)
+```sh
+docker run -it \
+      --rm \
+      --name=noetic_jde_container \
+      -p 8080:8080 -p 7681:7681 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/RoboticsAcademy:/RoboticsAcademy \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/RoboticsAcademy/scripts/manager-noetic.py:/manager-noetic.py \
+      noetic_jde_image bash
+docker exec -it noetic_jde_container bash
+
+```
+
+#### xserver_cmd
+```sh
+/usr/bin/Xorg -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./xdummy.log -config ./xorg.conf :0
+```
+
+#### console_xserver_cmd
+```sh
+/usr/bin/Xorg -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./console_xdummy.log -config ./xorg.conf :1
+```
+
+#### host_cmd
+```sh
+python3 /RoboticsAcademy/exercises/follow_line/web-template/exercise-noetic.py 0.0.0.0
+```
+
+#### roslaunch_cmd
+```sh
+/opt/ros/noetic/bin/roslaunch ./RoboticsAcademy/exercises/follow_line/web-template/launch/simple_line_follower_ros_headless.launch
+```
+
+#### start_vnc (for gzclient)
+```sh
+x11vnc -display :0 -nopw -forever -xkb -bg -rfbport 5900
+/noVNC/utils/launch.sh --listen 6080 --vnc localhost:5900
+```
+
+#### start_vnc (for console)
+```sh
+x11vnc -display :1 -nopw -forever -xkb -bg -rfbport 5901
+/noVNC/utils/launch.sh --listen 1108 --vnc localhost:5901
+```
+
+#### start_gzclient
+```sh
+export DISPLAY=:0; gzclient --verbose
+```
+
+#### start_console
+```sh
+export DISPLAY=:1; xterm -geometry 400x400 -fa 'Monospace' -fs 10 -bg black -fg white
+```

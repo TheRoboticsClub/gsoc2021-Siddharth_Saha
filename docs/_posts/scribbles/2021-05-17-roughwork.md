@@ -18,7 +18,7 @@ category: ""
 - [ ] Complete #11, #12, Final Report
 - [ ] Complete Nav2 Concepts
 - [x] Initiate RADI GUI in ROS2
-- [ ] File the virtualgl issue on upstream repo
+- [x] File the virtualgl issue on upstream repo
 
 #### Questions
 - [x] Why was the older JdeRobot GUI controller dropped?
@@ -64,13 +64,16 @@ Others
 
 
 #### RADI 2.4.0-beta
-`docker run -it --rm --device /dev/dri -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 jderobot/robotics-academy:2.4.0-beta bash`
+`docker run -it --rm -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 jderobot/robotics-academy:2.4.0-beta bash`
 
 
 #### RADI 2.4.2
 `docker run -it --rm -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 jderobot/robotics-academy:2.4.2 ./start.sh`
 
-Argument `--device /dev/dri` is for Intel and AMD hardwares
+(Locally built docker container)  
+`docker run -it --rm -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 jderobot/robotics-academy:melodic-radi ./start.sh`
+
+**Note**: Argument `--device /dev/dri` is for Intel and AMD hardwares
 
 #### RADI 3.1.0
 `docker run -it --rm -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 jderobot/robotics-academy:3.1.0 ./start-3.1.sh`
@@ -239,4 +242,25 @@ export DISPLAY=:0; gzclient --verbose
 #### start_console
 ```sh
 export DISPLAY=:1; xterm -geometry 400x400 -fa 'Monospace' -fs 10 -bg black -fg white
+```
+
+
+### Random
+```sh
+#!/bin/bash
+
+docker build -f Dockerfile-foxy-minimal -t foxy-minimal-radi . && \
+docker run -it \
+      --rm \
+      --net=host \
+      --privileged \
+      --gpus all \
+      -e DISPLAY \
+      -e XAUTHORITY=/tmp/.Xauthority \
+      -v ${XAUTHORITY}:/tmp/.Xauthority \
+      -v /tmp/.X11-unix:/tmp/.X11-unix \
+      --name foxy_radi_container \
+      -v /home/trunc8/villa/Basement/Playground/JDE_playground/myRoboticsAcademy:/RoboticsAcademy \
+      -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 \
+      foxy-minimal-radi bash
 ```

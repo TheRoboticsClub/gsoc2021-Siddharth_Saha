@@ -19,7 +19,7 @@ category: ""
 - [ ] Complete Nav2 Concepts
 - [x] Initiate RADI GUI in ROS2
 - [x] File the virtualgl issue on upstream repo
-- [x] Check if Gazebo works after removing Gazebo11 RUN
+- [x] Check if Gazebo works after removing RUN layer installing Gazebo11 from Dockerfile (already installed via `ros-foxy-gazebo-*`)
 - [x] Check if console ros2 cmds work after replacing bashrc with radi-entrypoint
 - [ ] Split Foxy Dockerfile into base Dockerfile and wrapper Dockerfile
 - [ ] Add the ROS2 equivalent of this line `RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /catkin_ws; catkin build'` to Foxy Dockerfile for Amazon warehouse
@@ -183,7 +183,7 @@ cd /RoboticsAcademy/scripts && ./start.sh
 
 ```
 
-### Developer's commands (Antequated)
+### Developer's commands (Some are antiquated)
 ```sh
 docker run -it \
       --rm \

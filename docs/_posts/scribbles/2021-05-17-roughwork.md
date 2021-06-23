@@ -21,9 +21,11 @@ category: ""
 - [x] File the virtualgl issue on upstream repo
 - [x] Check if Gazebo works after removing RUN layer installing Gazebo11 from Dockerfile (already installed via `ros-foxy-gazebo-*`)
 - [x] Check if console ros2 cmds work after replacing bashrc with radi-entrypoint
+- [x] Add final Foxy RADI demo video to week 4
 - [ ] Split Foxy Dockerfile into base Dockerfile and wrapper Dockerfile
 - [ ] Add the ROS2 equivalent of this line `RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /catkin_ws; catkin build'` to Foxy Dockerfile for Amazon warehouse
-- [ ] Cleaning the static files of tb3_teleop (minimal file desired)
+- [ ] Cleaning the `static/` directory files of tb3_teleop (minimal file desired)
+- [ ] Cleaning some unnecessary functions in `manager-4.0.py`
 - [ ] Debug amazon_robot_controller
 - [ ] Initiate web template for amazon warehouse. Would require design decisions (like an Rviz iframe and button)
 

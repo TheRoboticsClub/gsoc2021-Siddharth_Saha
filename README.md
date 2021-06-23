@@ -2,7 +2,13 @@
 
 **Title**: Robotics Academy &mdash; ROS2-RADI and Amazon warehouse exercise in web-based template for ROS2
 
-[Project Description](https://summerofcode.withgoogle.com/projects/#5887913654484992)
+[Project Description](https://summerofcode.withgoogle.com/projects/#5887913654484992)  
+[GSoC Blog](https://theroboticsclub.github.io/gsoc2021-Siddharth_Saha/)  
+[ROS2 Foxy RADI fork of RoboticsAcademy](https://github.com/trunc8/RoboticsAcademy/tree/issue-796)
+
+Progress Tracking
+- [Kanban board](https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/projects/1)
+- [Roughwork blogpost](https://theroboticsclub.github.io/gsoc2021-Siddharth_Saha/2021/05/17/roughwork#tasks)  
 
 ### Steps to replicate
 *(The shell scripts take care not to create files or clutter outside the `gsoc2021-Siddharth_Saha` directory)*

@@ -19,6 +19,10 @@ category: ""
 - [ ] Complete Nav2 Concepts
 - [x] Initiate RADI GUI in ROS2
 - [x] File the virtualgl issue on upstream repo
+- [ ] Check if Gazebo works after removing Gazebo11 RUN
+- [ ] Check if console ros2 cmds work after replacing bashrc with radi-entrypoint
+- [ ] Split Foxy Dockerfile into base Dockerfile and wrapper Dockerfile
+- [ ] Add the ROS2 equivalent of this line `RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /catkin_ws; catkin build'` to Foxy Dockerfile for Amazon warehouse
 
 #### Questions
 - [x] Why was the older JdeRobot GUI controller dropped?
@@ -51,6 +55,8 @@ category: ""
 - Design decision-  
     Foxy RADI uses several files from the noetic branch of RoboticsAcademy. I will commit my modifications on my fork of the RoboticsAcademy repo, instead of to the collab repo.  
     This will enable future developers to trace back the history of unchanged files.
+- Deleted Noetic Dockerfile and pushed it too, but realized useful for version control. Retrieved using [this](https://stackoverflow.com/a/57486483/7589046)
+- Using logical paths instead of absolute in shebangs as mentioned in this [StackOverflow post](https://unix.stackexchange.com/q/29608)
 
 #### Possible things to play with
 - [x] https://github.com/SteveMacenski/nav2_rosdevday_2021
@@ -81,18 +87,6 @@ Others
 #### RADI 3.1.0 (Locally built)
 `docker run -it --rm -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 noetic-radi ./start-3.1.sh`
 
-
-#### VirtualGL error
-```sh
-Step 13/74 : RUN curl -fsSL -O https://s3.amazonaws.com/virtualgl-pr/dev/linux/virtualgl_${VIRTUALGL_VERSION}_amd64.deb &&     curl -fsSL -O https://s3.amazonaws.com/virtualgl-pr/dev/linux/virtualgl32_${VIRTUALGL_VERSION}_amd64.deb &&     apt-get update && apt-get install -y --no-install-recommends ./virtualgl_${VIRTUALGL_VERSION}_amd64.deb ./virtualgl32_${VIRTUALGL_VERSION}_amd64.deb &&     rm virtualgl_${VIRTUALGL_VERSION}_amd64.deb virtualgl32_${VIRTUALGL_VERSION}_amd64.deb &&     chmod u+s /usr/lib/libvglfaker.so &&     chmod u+s /usr/lib/libdlfaker.so &&     chmod u+s /usr/lib32/libvglfaker.so &&     chmod u+s /usr/lib32/libdlfaker.so &&     chmod u+s /usr/lib/i386-linux-gnu/libvglfaker.so &&     chmod u+s /usr/lib/i386-linux-gnu/libdlfaker.so &&     curl -fsSL -O https://s3.amazonaws.com/turbovnc-pr/dev/linux/turbovnc_${TURBOVNC_VERSION}_amd64.deb &&     apt-get update && apt-get install -y --no-install-recommends ./turbovnc_${TURBOVNC_VERSION}_amd64.deb &&     rm turbovnc_${TURBOVNC_VERSION}_amd64.deb &&     rm -rf /var/lib/apt/lists/* &&     echo -e "no-remote-connections\nno-httpd\nno-x11-tcp-connections\nno-pam-sessions\npermitted-security-types = None, VNC, otp" > /etc/turbovncserver-security.conf
- ---> Running in e6ad25df396a
-curl: (22) The requested URL returned error: 404 Not Found
-The command '/bin/sh -c curl -fsSL -O https://s3.amazonaws.com/virtualgl-pr/dev/linux/virtualgl_${VIRTUALGL_VERSION}_amd64.deb &&     curl -fsSL -O https://s3.amazonaws.com/virtualgl-pr/dev/linux/virtualgl32_${VIRTUALGL_VERSION}_amd64.deb &&     apt-get update && apt-get install -y --no-install-recommends ./virtualgl_${VIRTUALGL_VERSION}_amd64.deb ./virtualgl32_${VIRTUALGL_VERSION}_amd64.deb &&     rm virtualgl_${VIRTUALGL_VERSION}_amd64.deb virtualgl32_${VIRTUALGL_VERSION}_amd64.deb &&     chmod u+s /usr/lib/libvglfaker.so &&     chmod u+s /usr/lib/libdlfaker.so &&     chmod u+s /usr/lib32/libvglfaker.so &&     chmod u+s /usr/lib32/libdlfaker.so &&     chmod u+s /usr/lib/i386-linux-gnu/libvglfaker.so &&     chmod u+s /usr/lib/i386-linux-gnu/libdlfaker.so &&     curl -fsSL -O https://s3.amazonaws.com/turbovnc-pr/dev/linux/turbovnc_${TURBOVNC_VERSION}_amd64.deb &&     apt-get update && apt-get install -y --no-install-recommends ./turbovnc_${TURBOVNC_VERSION}_amd64.deb &&     rm turbovnc_${TURBOVNC_VERSION}_amd64.deb &&     rm -rf /var/lib/apt/lists/* &&     echo -e "no-remote-connections\nno-httpd\nno-x11-tcp-connections\nno-pam-sessions\npermitted-security-types = None, VNC, otp" > /etc/turbovncserver-security.conf' returned a non-zero code: 22
-```
-
-<br/>
-
-`docker run -it -p 8000:8000 -p 8080:8080 -p 7681:7681 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 jde_image ./start.sh`
 
 
 ### Melodic manager.py
@@ -242,25 +236,4 @@ export DISPLAY=:0; gzclient --verbose
 #### start_console
 ```sh
 export DISPLAY=:1; xterm -geometry 400x400 -fa 'Monospace' -fs 10 -bg black -fg white
-```
-
-
-### Random
-```sh
-#!/bin/bash
-
-docker build -f Dockerfile-foxy-minimal -t foxy-minimal-radi . && \
-docker run -it \
-      --rm \
-      --net=host \
-      --privileged \
-      --gpus all \
-      -e DISPLAY \
-      -e XAUTHORITY=/tmp/.Xauthority \
-      -v ${XAUTHORITY}:/tmp/.Xauthority \
-      -v /tmp/.X11-unix:/tmp/.X11-unix \
-      --name foxy_radi_container \
-      -v /home/trunc8/villa/Basement/Playground/JDE_playground/myRoboticsAcademy:/RoboticsAcademy \
-      -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 \
-      foxy-minimal-radi bash
 ```

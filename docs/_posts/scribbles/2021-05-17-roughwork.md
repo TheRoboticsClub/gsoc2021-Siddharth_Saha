@@ -22,12 +22,17 @@ category: ""
 - [x] Check if Gazebo works after removing RUN layer installing Gazebo11 from Dockerfile (already installed via `ros-foxy-gazebo-*`)
 - [x] Check if console ros2 cmds work after replacing bashrc with radi-entrypoint
 - [x] Add final Foxy RADI demo video to week 4
-- [ ] Split Foxy Dockerfile into base Dockerfile and wrapper Dockerfile
-- [ ] Add the ROS2 equivalent of this line `RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /catkin_ws; catkin build'` to Foxy Dockerfile for Amazon warehouse
+- [x] Split Foxy Dockerfile into base Dockerfile and wrapper Dockerfile
+- [x] Add the ROS2 equivalent of this line `RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /catkin_ws; catkin build'` to Foxy Dockerfile for Amazon warehouse
 - [ ] Cleaning the `static/` directory files of tb3_teleop (minimal file desired)
 - [ ] Cleaning some unnecessary functions in `manager-4.0.py`
 - [ ] Debug amazon_robot_controller
 - [ ] Initiate web template for amazon warehouse. Would require design decisions (like an Rviz iframe and button)
+
+#### TODO's commented inside code
+- [ ] `build.sh`
+- [ ] `Dockerfile-foxy`
+- [ ] `Dockerfile-foxy.base`
 
 #### Questions
 - [x] Why was the older JdeRobot GUI controller dropped?
@@ -65,7 +70,7 @@ category: ""
 
 #### Possible things to play with
 - [x] https://github.com/SteveMacenski/nav2_rosdevday_2021
-- [ ] https://github.com/aws-robotics/aws-robomaker-hospital-world
+- [x] https://github.com/aws-robotics/aws-robomaker-hospital-world
 - [ ] https://github.com/sea-bass/turtlebot3_behavior_demos
 - [ ] https://mushr.io/tutorials/mushr_navigation_system/
 - [ ] https://github.com/BehaviorTree/Groot

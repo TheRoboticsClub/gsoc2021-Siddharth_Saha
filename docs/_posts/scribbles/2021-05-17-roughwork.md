@@ -25,7 +25,7 @@ category: ""
 - [x] Split Foxy Dockerfile into base Dockerfile and wrapper Dockerfile
 - [x] Add the ROS2 equivalent of this line `RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /catkin_ws; catkin build'` to Foxy Dockerfile for Amazon warehouse
 - [ ] Cleaning the `static/` directory files of tb3_teleop (minimal file desired)
-- [ ] Cleaning some unnecessary functions in `manager-4.0.py`
+- [x] Cleaning some unnecessary functions in `manager-4.0.py`
 - [ ] Debug amazon_robot_controller
 - [ ] Initiate web template for amazon warehouse. Would require design decisions (like an Rviz iframe and button)
 
@@ -67,6 +67,8 @@ category: ""
     This will enable future developers to trace back the history of unchanged files.
 - Deleted Noetic Dockerfile and pushed it too, but realized useful for version control. Retrieved using [this](https://stackoverflow.com/a/57486483/7589046)
 - Using logical paths instead of absolute in shebangs as mentioned in this [StackOverflow post](https://unix.stackexchange.com/q/29608)
+- Hopefully won't require to refer this- `roslaunch_cmd = '/bin/sh -c "export PWD="/";chmod +rwx /;export DISPLAY=:0;'`
+- Service calls to pause/unpause/reset: [ROS2 Migration](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-ROS-Clocks-and-sim-time#time-commands)
 
 #### Possible things to play with
 - [x] https://github.com/SteveMacenski/nav2_rosdevday_2021

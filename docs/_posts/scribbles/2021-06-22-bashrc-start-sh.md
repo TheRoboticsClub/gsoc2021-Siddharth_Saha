@@ -60,5 +60,8 @@ The only mention of `~/.bashrc` inside the Dockerfile is in the following layer-
 RUN echo 'source /radi-entrypoint.sh' >> ~/.bashrc
 ```
 
+### Consequences
+The proposed method allows us to reduce redundancy in the ROS commands inside `manager.py` by ensuring that the ROS environment is sourced at all places.
+
 #### References
 [^1]: [https://stackoverflow.com/questions/55206227/why-bashrc-is-not-executed-when-run-docker-container](https://stackoverflow.com/questions/55206227/why-bashrc-is-not-executed-when-run-docker-container)

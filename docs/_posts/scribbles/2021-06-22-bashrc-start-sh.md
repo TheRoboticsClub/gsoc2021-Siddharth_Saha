@@ -23,6 +23,7 @@ Running the command `docker run -it --rm -p 8000:8000 -p 2303:2303 -p 1905:1905 
 
 As a result, when the exercise is run, it throws the error that the ROS commands are not recognized. This was highlighted in RoboticsAcademy's [Issue #958](https://github.com/JdeRobot/RoboticsAcademy/issues/958).
 
+
 ### Reason of the Issue
 `~/.bashrc` contains the lines at the start-
 ```sh
@@ -62,6 +63,11 @@ RUN echo 'source /radi-entrypoint.sh' >> ~/.bashrc
 
 ### Consequences
 The proposed method allows us to reduce redundancy in the ROS commands inside `manager.py` by ensuring that the ROS environment is sourced at all places.
+
+### Side Note
+The issue arose on switching the Docker base images from "osrf/ros:melodic-desktop-full" to "nvidia/opengl:1.2-glvnd-runtime-ubuntu18.04".  
+OSRF images get around this issue by defining the `ros-entrypoint.sh` in the [core(most barebone) image](https://github.com/osrf/docker_images/blob/master/ros/melodic/ubuntu/bionic/ros-core/Dockerfile#L38). On the contrary, the opengl image is just a hardware accelerated Linux image.
+
 
 #### References
 [^1]: [https://stackoverflow.com/questions/55206227/why-bashrc-is-not-executed-when-run-docker-container](https://stackoverflow.com/questions/55206227/why-bashrc-is-not-executed-when-run-docker-container)

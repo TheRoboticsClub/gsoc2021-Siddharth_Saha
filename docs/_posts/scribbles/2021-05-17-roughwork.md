@@ -30,7 +30,7 @@ category: ""
 - [ ] Initiate web template for amazon warehouse. Would require design decisions (like an Rviz iframe and button)
 
 #### TODO's commented inside code
-- [ ] `build.sh`
+- [x] `build.sh`
 - [ ] `Dockerfile-foxy`
 - [ ] `Dockerfile-foxy.base`
 
@@ -69,6 +69,7 @@ category: ""
 - Using logical paths instead of absolute in shebangs as mentioned in this [StackOverflow post](https://unix.stackexchange.com/q/29608)
 - Hopefully won't require to refer this- `roslaunch_cmd = '/bin/sh -c "export PWD="/";chmod +rwx /;export DISPLAY=:0;'`
 - Service calls to pause/unpause/reset: [ROS2 Migration](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-ROS-Clocks-and-sim-time#time-commands)
+- `DISPLAY=:0 ros2 launch turtlebot3_bringup rviz2.launch.py`
 
 #### Possible things to play with
 - [x] https://github.com/SteveMacenski/nav2_rosdevday_2021

@@ -30,12 +30,12 @@ category: ""
 - [ ] Initiate web template for amazon warehouse. Would require design decisions (like an Rviz iframe and button)
 - [ ] Create RViz template exercise
 - [ ] Add `-p 6081:6081` to instructions wherever applicable
-- [ ] Merge PR of RADI-4.0.0
+- [x] Merge PR of [RADI-4.0.0](https://github.com/JdeRobot/RoboticsAcademy/pull/1074)
 
 #### TODO's commented inside code
 - [x] `build.sh`
-- [ ] `Dockerfile-foxy`
-- [ ] `Dockerfile-foxy.base`
+- [x] `Dockerfile-foxy`
+- [x] `Dockerfile-foxy.base`
 
 #### Questions
 - [x] Why was the older JdeRobot GUI controller dropped?

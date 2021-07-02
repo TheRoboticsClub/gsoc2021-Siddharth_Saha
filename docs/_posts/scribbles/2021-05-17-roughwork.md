@@ -31,6 +31,7 @@ category: ""
 - [x] Create RViz template exercise
 - [ ] Add `-p 6081:6081` to instructions wherever applicable
 - [x] Merge PR of [RADI-4.0.0](https://github.com/JdeRobot/RoboticsAcademy/pull/1074)
+- [ ] Change back to `foxy-radi` in README and Dockerfiles
 
 #### TODO's commented inside code
 - [x] `build.sh`

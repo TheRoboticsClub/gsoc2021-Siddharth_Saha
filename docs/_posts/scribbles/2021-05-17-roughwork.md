@@ -28,7 +28,7 @@ category: ""
 - [x] Cleaning some unnecessary functions in `manager-4.0.py`
 - [ ] Debug amazon_robot_controller
 - [ ] Initiate web template for amazon warehouse. Would require design decisions (like an Rviz iframe and button)
-- [ ] Create RViz template exercise
+- [x] Create RViz template exercise
 - [ ] Add `-p 6081:6081` to instructions wherever applicable
 - [x] Merge PR of [RADI-4.0.0](https://github.com/JdeRobot/RoboticsAcademy/pull/1074)
 
@@ -73,6 +73,7 @@ category: ""
 - Hopefully won't require to refer this- `roslaunch_cmd = '/bin/sh -c "export PWD="/";chmod +rwx /;export DISPLAY=:0;'`
 - Service calls to pause/unpause/reset: [ROS2 Migration](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-ROS-Clocks-and-sim-time#time-commands)
 - `DISPLAY=:0 ros2 launch turtlebot3_bringup rviz2.launch.py`: [Reference](https://askubuntu.com/questions/203173/run-application-on-local-machine-and-show-gui-on-remote-display)
+- Rviz config based window sizing can break when the browser size is small
 
 #### Possible things to play with
 - [x] https://github.com/SteveMacenski/nav2_rosdevday_2021

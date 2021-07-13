@@ -23,3 +23,11 @@ The remaining files are all inside the _static/exercises/_ directory of the resp
 - `ws_code.js` connects to websocket at port **1905**
 - `gui.py` creates websocket server at port **2303**
 - `ws_gui.js` connects to websocket at port **2303**
+
+
+
+For each exercise there are two sides: the python part and the html part. They are connected in runtime through websockets (code_ws and gui_ws). For instance, in the Control Position drone exercise the html part is here: (a) https://github.com/JdeRobot/RoboticsAcademy/tree/master/exercises/templates/exercises/position_control
+
+and the python part is here: (b) https://github.com/JdeRobot/RoboticsAcademy/tree/master/exercises/static/exercises/position_control/web-template
+
+the exercise.html and exercise.py are connected at runtime through websockets

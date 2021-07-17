@@ -38,13 +38,8 @@ Pull Request | Solves Issue | Description
 [#1074]: https://github.com/JdeRobot/RoboticsAcademy/pull/1074 "Pull request #1074"
 
 
-[#6]: https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/issues/6 "Issue #6"
-[#801]: https://github.com/JdeRobot/RoboticsAcademy/issues/801 "Issue #801"
 [#1094]: https://github.com/JdeRobot/RoboticsAcademy/pull/1094 "Pull request #1094"
-
-
 
 
 [#8]: https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/issues/8 "Issue #8"
 [#1126]: https://github.com/JdeRobot/RoboticsAcademy/issues/1126 "Issue #1126"
-[#1094]: https://github.com/JdeRobot/RoboticsAcademy/pull/1094 "Pull request #1094"

@@ -27,7 +27,7 @@ category: ""
 - [ ] Cleaning the `static/` directory files of tb3_teleop (minimal file desired)
 - [x] Cleaning some unnecessary functions in `manager-4.0.py`
 - [ ] Debug amazon_robot_controller
-- [ ] Initiate web template for amazon warehouse. Would require design decisions (like an Rviz iframe and button)
+- [x] Initiate web template for amazon warehouse. Would require design decisions (like an Rviz iframe and button)
 - [x] Create RViz template exercise
 - [ ] Add `-p 6081:6081` to instructions wherever applicable
 - [x] Merge PR of [RADI-4.0.0](https://github.com/JdeRobot/RoboticsAcademy/pull/1074)

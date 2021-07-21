@@ -32,6 +32,8 @@ category: ""
 - [ ] Add `-p 6081:6081` to instructions wherever applicable
 - [x] Merge PR of [RADI-4.0.0](https://github.com/JdeRobot/RoboticsAcademy/pull/1074)
 - [ ] Change back to `foxy-radi` in README and Dockerfiles
+- [x] Clean amazon_warehouse template into a PR
+- [ ] Take apart amazon_robot_controller to understand where the error arises
 
 #### TODO's commented inside code
 - [x] `build.sh`

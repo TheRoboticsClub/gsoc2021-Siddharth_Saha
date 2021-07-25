@@ -36,6 +36,8 @@ category: ""
 - [x] Take apart amazon_robot_controller to understand where the error arises
 - [ ] Catch up on the Slack discussions and solved issues on GitHub
 - [ ] Imbibe the new manager changes into Foxy
+- [ ] Add video to week 7-8 blog (goal navigation)
+- [ ] Add video to week 9 blog (waypoint navigation)
 
 #### TODO's commented inside code
 - [x] `build.sh`
@@ -81,6 +83,12 @@ category: ""
 - `DISPLAY=:0 ros2 launch turtlebot3_bringup rviz2.launch.py`: [Reference](https://askubuntu.com/questions/203173/run-application-on-local-machine-and-show-gui-on-remote-display)
 - Rviz config based window sizing can break when the browser size is small
 - Re-sourcing not needed after `colcon build`
+- `<ClearEntireCostmap name="ClearGlobalCostmap-Context" service_name="global_costmap/clear_entirely_global_costmap"/>` only removes the additional observed obstacles. It is unable to remove/modify anything corresponding to input map.
+- Can add *inflation_radius* below `plugin: "nav2_costmap_2d::InflationLayer"`
+
+#### Resources to read
+- [x] https://github.com/mlherd/navigation2/tree/new-tutorials/doc/tb3_tutorial
+- [ ] https://github.com/osrf/subt_hello_world/blob/master/posts/04_navigation.md
 
 #### Possible things to play with
 - [x] https://github.com/SteveMacenski/nav2_rosdevday_2021
@@ -88,10 +96,11 @@ category: ""
 - [ ] https://github.com/sea-bass/turtlebot3_behavior_demos
 - [ ] https://mushr.io/tutorials/mushr_navigation_system/
 - [ ] https://github.com/BehaviorTree/Groot
-- [ ] https://github.com/osrf/subt_hello_world/blob/master/posts/04_navigation.md
+- [ ] https://github.com/osrf/subt_hello_world/
 
 Others
 - [ ] https://github.com/AndrejOrsula/drl_grasping
+- [ ] http://moveit2_tutorials.picknik.ai/doc/getting_started/getting_started.html
 
 
 #### RADI 2.4.0-beta

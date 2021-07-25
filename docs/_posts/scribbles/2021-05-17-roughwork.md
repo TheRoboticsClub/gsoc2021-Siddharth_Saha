@@ -26,14 +26,16 @@ category: ""
 - [x] Add the ROS2 equivalent of this line `RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /catkin_ws; catkin build'` to Foxy Dockerfile for Amazon warehouse
 - [ ] Cleaning the `static/` directory files of tb3_teleop (minimal file desired)
 - [x] Cleaning some unnecessary functions in `manager-4.0.py`
-- [ ] Debug amazon_robot_controller
+- [x] Debug amazon_robot_controller
 - [x] Initiate web template for amazon warehouse. Would require design decisions (like an Rviz iframe and button)
 - [x] Create RViz template exercise
 - [ ] Add `-p 6081:6081` to instructions wherever applicable
 - [x] Merge PR of [RADI-4.0.0](https://github.com/JdeRobot/RoboticsAcademy/pull/1074)
 - [ ] Change back to `foxy-radi` in README and Dockerfiles
 - [x] Clean amazon_warehouse template into a PR
-- [ ] Take apart amazon_robot_controller to understand where the error arises
+- [x] Take apart amazon_robot_controller to understand where the error arises
+- [ ] Catch up on the Slack discussions and solved issues on GitHub
+- [ ] Imbibe the new manager changes into Foxy
 
 #### TODO's commented inside code
 - [x] `build.sh`
@@ -43,6 +45,7 @@ category: ""
 #### Questions
 - [x] Why was the older JdeRobot GUI controller dropped?
 - [x] What does an architecture look like?
+- [ ] Inside nav2_params_with_control.yaml, how does ROS2 know the paths of the file names?
 
 #### General questions
 - [x] what is bringup?
@@ -77,6 +80,7 @@ category: ""
 - Service calls to pause/unpause/reset: [ROS2 Migration](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-ROS-Clocks-and-sim-time#time-commands)
 - `DISPLAY=:0 ros2 launch turtlebot3_bringup rviz2.launch.py`: [Reference](https://askubuntu.com/questions/203173/run-application-on-local-machine-and-show-gui-on-remote-display)
 - Rviz config based window sizing can break when the browser size is small
+- Re-sourcing not needed after `colcon build`
 
 #### Possible things to play with
 - [x] https://github.com/SteveMacenski/nav2_rosdevday_2021
@@ -84,6 +88,7 @@ category: ""
 - [ ] https://github.com/sea-bass/turtlebot3_behavior_demos
 - [ ] https://mushr.io/tutorials/mushr_navigation_system/
 - [ ] https://github.com/BehaviorTree/Groot
+- [ ] https://github.com/osrf/subt_hello_world/blob/master/posts/04_navigation.md
 
 Others
 - [ ] https://github.com/AndrejOrsula/drl_grasping

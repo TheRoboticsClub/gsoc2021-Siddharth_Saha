@@ -38,6 +38,7 @@ category: ""
 - [ ] Imbibe the new manager changes into Foxy
 - [ ] Add video to week 7-8 blog (goal navigation)
 - [ ] Add video to week 9 blog (waypoint navigation)
+- [ ] Expand on week 2 blog from the PR's
 
 #### TODO's commented inside code
 - [x] `build.sh`

@@ -12,32 +12,6 @@ category: ""
 <br />
 
 
-#### Notes
-- Learnt
-    + "{goal}" is a blackboard variable
-    + HAL: Hardware Abstraction Layer
-    + `DISPLAY=:0 ros2 launch turtlebot3_bringup rviz2.launch.py`: [Reference](https://askubuntu.com/questions/203173/run-application-on-local-machine-and-show-gui-on-remote-display)
-    + Hopefully won't require to refer this- `roslaunch_cmd = '/bin/sh -c "export PWD="/";chmod +rwx /;export DISPLAY=:0;'`
-    + Service calls to pause/unpause/reset: [ROS2 Migration](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-ROS-Clocks-and-sim-time#time-commands)
-    + `<ClearEntireCostmap name="ClearGlobalCostmap-Context" service_name="global_costmap/clear_entirely_global_costmap"/>` only removes the additional observed obstacles. It is unable to remove/modify anything corresponding to input map.
-    + Can add *inflation_radius* below `plugin: "nav2_costmap_2d::InflationLayer"`
-    + [Update git submodules to latest commit ID](git submodule update --recursive --remote)
-- Tips
-    + Remember to `git submodule update --init --recursive`!!
-    + Re-sourcing not needed after `colcon build`
-    + `colcon build`!! after modifying world file
-- Design decisions  
-    + Foxy RADI uses several files from the noetic branch of RoboticsAcademy. I will commit my modifications on my fork of the RoboticsAcademy repo, instead of to the collab repo.  
-      This will enable future developers to trace back the history of unchanged files.
-    + Deleted Noetic Dockerfile and pushed it too, but realized useful for version control. Retrieved using [this](https://stackoverflow.com/a/57486483/7589046)
-    + Using logical paths instead of absolute in shebangs as mentioned in this [StackOverflow post](https://unix.stackexchange.com/q/29608)
-    + Clean up `aws-robomaker-small-warehouse` world if time permits. Extremely haphazard at the moment. Currently uses the ros1 branch with pallets replaced in the world. Either don't keep it as a git sub-module or use a specific commit from the ros2 branch. The latter isn't possible as the pallets need to be replaced. Best to imbibe the world completely as a package under CustomRobots.
-- Consider
-    + Avoid the rsync mess in my Dockerfile
-    + Rviz config based window sizing can break when the browser size is small
-    + I could add timer in the utilities bar at the top
-
-
 #### Tasks
 - [x] Once [this PR](https://github.com/shreyasgokhale/aws-robomaker-small-warehouse-world/pull/1) is closed, update the CustomRobots repo
 - [x] We have a problem. Duplicate issues in my gsoc repo. Fixed using [this](https://docs.github.com/en/issues/tracking-your-work-with-issues/marking-issues-or-pull-requests-as-a-duplicate)
@@ -69,8 +43,33 @@ category: ""
 - [ ] Add video to week 9 blog (waypoint navigation)
 - [ ] Add my name to amazon single warehouse exercise
 - [ ] Expand on week 2 blog from the PR's
+- [ ] Incorporate Table of contents
 
 
+#### Notes
+- Learnt
+    + "{goal}" is a blackboard variable
+    + HAL: Hardware Abstraction Layer
+    + `DISPLAY=:0 ros2 launch turtlebot3_bringup rviz2.launch.py`: [Reference](https://askubuntu.com/questions/203173/run-application-on-local-machine-and-show-gui-on-remote-display)
+    + Hopefully won't require to refer this- `roslaunch_cmd = '/bin/sh -c "export PWD="/";chmod +rwx /;export DISPLAY=:0;'`
+    + Service calls to pause/unpause/reset: [ROS2 Migration](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-ROS-Clocks-and-sim-time#time-commands)
+    + `<ClearEntireCostmap name="ClearGlobalCostmap-Context" service_name="global_costmap/clear_entirely_global_costmap"/>` only removes the additional observed obstacles. It is unable to remove/modify anything corresponding to input map.
+    + Can add *inflation_radius* below `plugin: "nav2_costmap_2d::InflationLayer"`
+    + [Update git submodules to latest commit ID](git submodule update --recursive --remote)
+- Tips
+    + Remember to `git submodule update --init --recursive`!!
+    + Re-sourcing not needed after `colcon build`
+    + `colcon build`!! after modifying world file
+- Design decisions  
+    + Foxy RADI uses several files from the noetic branch of RoboticsAcademy. I will commit my modifications on my fork of the RoboticsAcademy repo, instead of to the collab repo.  
+      This will enable future developers to trace back the history of unchanged files.
+    + Deleted Noetic Dockerfile and pushed it too, but realized useful for version control. Retrieved using [this](https://stackoverflow.com/a/57486483/7589046)
+    + Using logical paths instead of absolute in shebangs as mentioned in this [StackOverflow post](https://unix.stackexchange.com/q/29608)
+    + Clean up `aws-robomaker-small-warehouse` world if time permits. Extremely haphazard at the moment. Currently uses the ros1 branch with pallets replaced in the world. Either don't keep it as a git sub-module or use a specific commit from the ros2 branch. The latter isn't possible as the pallets need to be replaced. Best to imbibe the world completely as a package under CustomRobots.
+- Consider
+    + Avoid the rsync mess in my Dockerfile
+    + Rviz config based window sizing can break when the browser size is small
+    + I could add timer in the utilities bar at the top
 
 
 #### TODO's commented inside code

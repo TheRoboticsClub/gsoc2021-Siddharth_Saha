@@ -4,7 +4,7 @@ title:  "Why ~/.bashrc is not sourced with ./start.sh"
 date:   2021-06-22 23:14:00 +0530
 blurb: ""
 og_image: /assets/img/content/placeholder-img/Banner.jpg
-category: ""
+category: scribbles
 ---
 
 <img src="{{ "/assets/img/content/placeholder-img/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>

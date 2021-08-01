@@ -4,7 +4,7 @@ title:  "(Running) Rough work"
 date:   2021-05-17 16:18:00 +0530
 blurb: ""
 og_image: /assets/img/content/placeholder-img/Banner.jpg
-category: ""
+category: scribbles
 ---
 
 <img src="{{ "/assets/img/content/placeholder-img/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>
@@ -44,6 +44,7 @@ category: ""
 - [ ] Add my name to amazon single warehouse exercise
 - [ ] Expand on week 2 blog from the PR's
 - [ ] Incorporate Table of contents
+- [ ] Move around fix for amazon_robot_controller after pulling the latest changes (Err on the side of caution)
 
 
 #### Notes

@@ -4,7 +4,7 @@ title:  "Experience with Duplicate issues"
 date:   2021-08-01 12:00:00 +0530
 blurb: ""
 og_image: /assets/img/content/placeholder-img/Banner.jpg
-category: ""
+category: scribbles
 ---
 
 <img src="{{ "/assets/img/content/placeholder-img/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>

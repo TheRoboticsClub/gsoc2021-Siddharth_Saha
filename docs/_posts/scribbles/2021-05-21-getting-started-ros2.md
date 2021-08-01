@@ -4,7 +4,7 @@ title:  "Getting started with ROS2 Design"
 date:   2021-05-21 23:30:00 +0530
 blurb: ""
 og_image: /assets/img/content/placeholder-img/Banner.jpg
-category: ""
+category: scribbles
 ---
 
 <img src="{{ "/assets/img/content/placeholder-img/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>

@@ -40,20 +40,47 @@ category: ""
 - [ ] Add video to week 9 blog (waypoint navigation)
 - [ ] Expand on week 2 blog from the PR's
 
+
+#### Notes
+- "{goal}" is a blackboard variable
+- Remember to `git submodule update --init --recursive`!!
+- Avoid the rsync mess in my Dockerfile
+- HAL: Hardware Abstraction Layer
+- Design decisions  
+    + Foxy RADI uses several files from the noetic branch of RoboticsAcademy. I will commit my modifications on my fork of the RoboticsAcademy repo, instead of to the collab repo.  
+      This will enable future developers to trace back the history of unchanged files.
+    + Deleted Noetic Dockerfile and pushed it too, but realized useful for version control. Retrieved using [this](https://stackoverflow.com/a/57486483/7589046)
+    + Using logical paths instead of absolute in shebangs as mentioned in this [StackOverflow post](https://unix.stackexchange.com/q/29608)
+    + Clean up `aws-robomaker-small-warehouse` world if time permits. Extremely haphazard at the moment. Currently uses the ros1 branch with pallets replaced in the world. Either don't keep it as a git sub-module or use a specific commit from the ros2 branch. The latter isn't possible as the pallets need to be replaced. Best to imbibe the world completely as a package under CustomRobots.
+- Hopefully won't require to refer this- `roslaunch_cmd = '/bin/sh -c "export PWD="/";chmod +rwx /;export DISPLAY=:0;'`
+- Service calls to pause/unpause/reset: [ROS2 Migration](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-ROS-Clocks-and-sim-time#time-commands)
+- `DISPLAY=:0 ros2 launch turtlebot3_bringup rviz2.launch.py`: [Reference](https://askubuntu.com/questions/203173/run-application-on-local-machine-and-show-gui-on-remote-display)
+- Rviz config based window sizing can break when the browser size is small
+- `<ClearEntireCostmap name="ClearGlobalCostmap-Context" service_name="global_costmap/clear_entirely_global_costmap"/>` only removes the additional observed obstacles. It is unable to remove/modify anything corresponding to input map.
+- Can add *inflation_radius* below `plugin: "nav2_costmap_2d::InflationLayer"`
+- *Consider*: I could add timer in the utilities bar at the top
+- Tips
+    + Re-sourcing not needed after `colcon build`
+    + `colcon build`!! after modifying world file
+
+
 #### TODO's commented inside code
 - [x] `build.sh`
 - [x] `Dockerfile-foxy`
 - [x] `Dockerfile-foxy.base`
+
 
 #### Questions
 - [x] Why was the older JdeRobot GUI controller dropped?
 - [x] What does an architecture look like?
 - [ ] Inside nav2_params_with_control.yaml, how does ROS2 know the paths of the file names?
 
+
 #### General questions
 - [x] what is bringup?
     + *Reference*: The Turtlebot Bringup package contains all the neccesary configuration and launch files for loading the Turtlebot drivers.
     + Must be on similar lines
+
 
 #### ROS2 Doubts
 - [x] Build farm
@@ -69,23 +96,6 @@ category: ""
 - [x] *mixins* in colcon
     + Mixins can be used by several verbs to contribute command line arguments defined in external files. 
 
-#### Notes
-- "{goal}" is a blackboard variable
-- Remember to `git submodule update --init --recursive`!!
-- Avoid the rsync mess in my Dockerfile
-- HAL: Hardware Abstraction Layer
-- Design decision-  
-    Foxy RADI uses several files from the noetic branch of RoboticsAcademy. I will commit my modifications on my fork of the RoboticsAcademy repo, instead of to the collab repo.  
-    This will enable future developers to trace back the history of unchanged files.
-- Deleted Noetic Dockerfile and pushed it too, but realized useful for version control. Retrieved using [this](https://stackoverflow.com/a/57486483/7589046)
-- Using logical paths instead of absolute in shebangs as mentioned in this [StackOverflow post](https://unix.stackexchange.com/q/29608)
-- Hopefully won't require to refer this- `roslaunch_cmd = '/bin/sh -c "export PWD="/";chmod +rwx /;export DISPLAY=:0;'`
-- Service calls to pause/unpause/reset: [ROS2 Migration](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-ROS-Clocks-and-sim-time#time-commands)
-- `DISPLAY=:0 ros2 launch turtlebot3_bringup rviz2.launch.py`: [Reference](https://askubuntu.com/questions/203173/run-application-on-local-machine-and-show-gui-on-remote-display)
-- Rviz config based window sizing can break when the browser size is small
-- Re-sourcing not needed after `colcon build`
-- `<ClearEntireCostmap name="ClearGlobalCostmap-Context" service_name="global_costmap/clear_entirely_global_costmap"/>` only removes the additional observed obstacles. It is unable to remove/modify anything corresponding to input map.
-- Can add *inflation_radius* below `plugin: "nav2_costmap_2d::InflationLayer"`
 
 #### Resources to read
 - [x] https://github.com/mlherd/navigation2/tree/new-tutorials/doc/tb3_tutorial

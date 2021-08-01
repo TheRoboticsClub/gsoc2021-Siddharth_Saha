@@ -11,7 +11,7 @@ category: ""
 <br />
 <br />
 
-### Steps
+### Installations
 - Install [Turtlebot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/) --- Switch to **Foxy** at the top bar
 - Clone and build [Turtlebot3 Simulation](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/) --- Switch to **Foxy** at the top bar
 - Clone and build [SLAM Toolbox](https://github.com/SteveMacenski/slam_toolbox/tree/foxy-devel) --- foxy-devel branch

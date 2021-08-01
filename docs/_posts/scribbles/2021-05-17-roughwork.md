@@ -43,8 +43,9 @@ category: scribbles
 - [ ] Add video to week 9 blog (waypoint navigation)
 - [ ] Add my name to amazon single warehouse exercise
 - [ ] Expand on week 2 blog from the PR's
-- [ ] Incorporate Table of contents
-- [ ] Move around fix for amazon_robot_controller after pulling the latest changes (Err on the side of caution)
+- [x] Incorporate Table of contents
+- [x] Fix amazon_robot_controller after pulling the latest changes (Err on the side of caution)
+- [ ] Add to blog the issues explained in CustomRobots [Issue 81](https://github.com/JdeRobot/CustomRobots/issues/81), [Issue 79](https://github.com/JdeRobot/CustomRobots/issues/79), and [Issue 93](https://github.com/JdeRobot/CustomRobots/issues/93)
 
 
 #### Notes

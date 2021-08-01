@@ -11,17 +11,22 @@
           <h1 class="page-heading">{{ page.title }}</h1>
           {{ content }}
 
-          <h2>Milestones</h2>
-          {% assign category = "milestones" %}
-          {% include category-posts.html %}
+          <details>
+            <summary><i>Table of Contents</i> <small style="color: #6082B6;">(Expand)</small></summary>
+            <br/>
+            <ol>
+              {% for member in site.data.blog-categories-list %}
+                <li><a href="#{{ member.category }}">{{ member.name }}</a></li>
+              {% endfor %}
+            </ol>
+          </details>
+          <br/>
 
-          <h2>Scribbles</h2>
-          {% assign category = "" %}
-          {% include category-posts.html %}
-
-          <h2>Minutes</h2>
-          {% assign category = "minutes" %}
-          {% include category-posts.html %}
+          {% for member in site.data.blog-categories-list %}
+            <h2 id="{{ member.category }}">{{ member.name }}</h2>
+            {% include category-posts.html %}
+          {% endfor %}
+          <br/>
           
         </div>
       </div>

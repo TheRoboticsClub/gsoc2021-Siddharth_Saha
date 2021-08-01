@@ -1,0 +1,8 @@
+- name: Milestones
+  category: milestones
+
+- name: Scribbles
+  category: scribbles
+
+- name: Minutes
+  category: minutes

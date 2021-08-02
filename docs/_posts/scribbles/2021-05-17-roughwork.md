@@ -46,6 +46,7 @@ category: scribbles
 - [x] Incorporate Table of contents
 - [x] Fix amazon_robot_controller after pulling the latest changes (Err on the side of caution)
 - [ ] Add to blog the issues explained in CustomRobots [Issue 81](https://github.com/JdeRobot/CustomRobots/issues/81), [Issue 79](https://github.com/JdeRobot/CustomRobots/issues/79), and [Issue 93](https://github.com/JdeRobot/CustomRobots/issues/93)
+- [ ] Add to week-9 blog "The complete breakdown of the issue can be seen in scribble xx. For reference, the crux of the issue is in these error logs..."
 
 
 #### Notes
@@ -83,7 +84,7 @@ category: scribbles
 #### Questions
 - [x] Why was the older JdeRobot GUI controller dropped?
 - [x] What does an architecture look like?
-- [ ] Inside nav2_params_with_control.yaml, how does ROS2 know the paths of the file names?
+- [x] Inside nav2_params_with_control.yaml, how does ROS2 know the paths of the file names? *Answer: It doesn't. E.g., remove the default_bt_xml_filename parameter from launch file, then bt_navigator will only work if full path of default_bt_xml_filename is entered in nav2_params_with_control.yaml* (Terminal output in GSoC logs)
 
 
 #### General questions

@@ -1,5 +1,5 @@
 <p class="blog-post-list">            
-  {% for post in site.categories[member.category] %}
+  {% for post in site.categories[category] %}
     {% if post.draft != true %}
       <span class="blog-post-date">{{ post.date | date: "%b %-d, %y" }}</span> »
       <a href="{{ post.url | replace:'.html','' | prepend: site.baseurl }}" class="blog-post-title">

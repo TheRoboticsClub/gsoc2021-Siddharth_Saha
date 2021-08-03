@@ -4,7 +4,7 @@ title:  "Research on serving RViz2 on web template"
 date:   2021-07-02 12:00:00 +0530
 blurb: ""
 og_image: /assets/img/content/placeholder-img/Banner.jpg
-category: scribbles
+category: ""
 ---
 
 <img src="{{ "/assets/img/content/placeholder-img/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>

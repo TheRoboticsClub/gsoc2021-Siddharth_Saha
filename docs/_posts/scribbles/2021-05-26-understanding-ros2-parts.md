@@ -4,7 +4,7 @@ title:  "Understanding ROS2 components"
 date:   2021-05-26 16:18:00 +0530
 blurb: ""
 og_image: /assets/img/content/placeholder-img/Banner.jpg
-category: scribbles
+category: ""
 ---
 
 <img src="{{ "/assets/img/content/placeholder-img/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>

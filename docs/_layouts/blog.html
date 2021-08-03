@@ -24,6 +24,11 @@
 
           {% for member in site.data.blog-categories-list %}
             <h2 id="{{ member.category }}">{{ member.name }}</h2>
+            <!-- Hacky fix below. "member.category=scribbles" allows my 
+            table of contents to work. But I've posted the scribble
+            blog posts on the internet with category=""
+            Redirection would be uglier. So we have the below hack: -->
+            {% assign category = member.category | replace:'scribbles','' %}
             {% include category-posts.html %}
           {% endfor %}
           <br/>

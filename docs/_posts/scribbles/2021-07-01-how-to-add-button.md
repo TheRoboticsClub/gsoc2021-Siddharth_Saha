@@ -4,7 +4,7 @@ title:  "How to add a button and iframe to the web template"
 date:   2021-07-01 14:17:00 +0530
 blurb: ""
 og_image: /assets/img/content/placeholder-img/Banner.jpg
-category: scribbles
+category: ""
 ---
 
 <img src="{{ "/assets/img/content/placeholder-img/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>

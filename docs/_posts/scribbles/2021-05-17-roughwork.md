@@ -21,7 +21,7 @@ category: ""
 - [x] Update Meet 3 minutes
 - [x] Convert tasks to issues
 - [ ] Complete #11, #12, Final Report
-- [ ] Complete Nav2 Concepts
+- [x] Complete Nav2 Concepts
 - [x] Initiate RADI GUI in ROS2
 - [x] File the virtualgl issue on upstream repo
 - [x] Check if Gazebo works after removing RUN layer installing Gazebo11 from Dockerfile (already installed via `ros-foxy-gazebo-*`)
@@ -58,7 +58,7 @@ category: ""
     + Service calls to pause/unpause/reset: [ROS2 Migration](https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-ROS-Clocks-and-sim-time#time-commands)
     + `<ClearEntireCostmap name="ClearGlobalCostmap-Context" service_name="global_costmap/clear_entirely_global_costmap"/>` only removes the additional observed obstacles. It is unable to remove/modify anything corresponding to input map.
     + Can add *inflation_radius* below `plugin: "nav2_costmap_2d::InflationLayer"`
-    + [Update git submodules to latest commit ID](git submodule update --recursive --remote)
+    + Update git submodules to latest commit ID: `git submodule update --recursive --remote`
 - Tips
     + Remember to `git submodule update --init --recursive`!!
     + Re-sourcing not needed after `colcon build`
@@ -85,6 +85,7 @@ category: ""
 - [x] Why was the older JdeRobot GUI controller dropped?
 - [x] What does an architecture look like?
 - [x] Inside nav2_params_with_control.yaml, how does ROS2 know the paths of the file names? *Answer: It doesn't. E.g., remove the default_bt_xml_filename parameter from launch file, then bt_navigator will only work if full path of default_bt_xml_filename is entered in nav2_params_with_control.yaml* (Terminal output in GSoC logs)
+- [ ] In colcon, what are `DCMAKE_BUILD_TYPE` and similar flags?
 
 
 #### General questions

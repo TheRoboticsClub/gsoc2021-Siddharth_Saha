@@ -47,9 +47,26 @@ category: ""
 - [x] Fix amazon_robot_controller after pulling the latest changes (Err on the side of caution)
 - [ ] Add to blog the issues explained in CustomRobots [Issue 81](https://github.com/JdeRobot/CustomRobots/issues/81), [Issue 79](https://github.com/JdeRobot/CustomRobots/issues/79), and [Issue 93](https://github.com/JdeRobot/CustomRobots/issues/93)
 - [ ] Add to week-9 blog "The complete breakdown of the issue can be seen in scribble xx. For reference, the crux of the issue is in these error logs..."
+- [ ] Add blog links for each PR in first eval
+- [ ] Begin tabulating PRs for final eval
 
 
 #### Notes
+- Design decisions  
+    + Foxy RADI uses several files from the noetic branch of RoboticsAcademy. I will commit my modifications on my fork of the RoboticsAcademy repo, instead of to the collab repo.  
+      This will enable future developers to trace back the history of unchanged files.
+    + Deleted Noetic Dockerfile and pushed it too, but realized useful for version control. Retrieved using [this](https://stackoverflow.com/a/57486483/7589046)
+    + Using logical paths instead of absolute in shebangs as mentioned in this [StackOverflow post](https://unix.stackexchange.com/q/29608)
+    + Clean up `aws-robomaker-small-warehouse` world if time permits. Extremely haphazard at the moment. Currently uses the ros1 branch with pallets replaced in the world. Either don't keep it as a git sub-module or use a specific commit from the ros2 branch. The latter isn't possible as the pallets need to be replaced. Best to imbibe the world completely as a package under CustomRobots.
+- Tips
+    + Remember to `git submodule update --init --recursive`!!
+    + Re-sourcing not needed after `colcon build`
+    + `colcon build`!! after modifying world file
+- Consider
+    + Avoid the rsync mess in my Dockerfile
+    + Rviz config based window sizing can break when the browser size is small
+    + I could add timer in the utilities bar at the top
+    + The modified urdf might cause problems during slam
 - Learnt
     + "{goal}" is a blackboard variable
     + HAL: Hardware Abstraction Layer
@@ -59,20 +76,7 @@ category: ""
     + `<ClearEntireCostmap name="ClearGlobalCostmap-Context" service_name="global_costmap/clear_entirely_global_costmap"/>` only removes the additional observed obstacles. It is unable to remove/modify anything corresponding to input map.
     + Can add *inflation_radius* below `plugin: "nav2_costmap_2d::InflationLayer"`
     + Update git submodules to latest commit ID: `git submodule update --recursive --remote`
-- Tips
-    + Remember to `git submodule update --init --recursive`!!
-    + Re-sourcing not needed after `colcon build`
-    + `colcon build`!! after modifying world file
-- Design decisions  
-    + Foxy RADI uses several files from the noetic branch of RoboticsAcademy. I will commit my modifications on my fork of the RoboticsAcademy repo, instead of to the collab repo.  
-      This will enable future developers to trace back the history of unchanged files.
-    + Deleted Noetic Dockerfile and pushed it too, but realized useful for version control. Retrieved using [this](https://stackoverflow.com/a/57486483/7589046)
-    + Using logical paths instead of absolute in shebangs as mentioned in this [StackOverflow post](https://unix.stackexchange.com/q/29608)
-    + Clean up `aws-robomaker-small-warehouse` world if time permits. Extremely haphazard at the moment. Currently uses the ros1 branch with pallets replaced in the world. Either don't keep it as a git sub-module or use a specific commit from the ros2 branch. The latter isn't possible as the pallets need to be replaced. Best to imbibe the world completely as a package under CustomRobots.
-- Consider
-    + Avoid the rsync mess in my Dockerfile
-    + Rviz config based window sizing can break when the browser size is small
-    + I could add timer in the utilities bar at the top
+    + For each `DeclareLaunchArgument()` there exists a `LaunchConfiguration()`, which allows the launch variable's value to be used inside the python launch file
 
 
 #### TODO's commented inside code
@@ -86,6 +90,9 @@ category: ""
 - [x] What does an architecture look like?
 - [x] Inside nav2_params_with_control.yaml, how does ROS2 know the paths of the file names? *Answer: It doesn't. E.g., remove the default_bt_xml_filename parameter from launch file, then bt_navigator will only work if full path of default_bt_xml_filename is entered in nav2_params_with_control.yaml* (Terminal output in GSoC logs)
 - [ ] In colcon, what are `DCMAKE_BUILD_TYPE` and similar flags?
+- [ ] `turtlebot3_world.launch.py` uses *gzserver.launch.py* and *gzserver.launch.py*. Is it any different from the *start_gazebo_server_cmd* and *start_gazebo_client_cmd* used in `amazon_robot_in_aws_world.py`?
+- [ ] *declare_simulator_cmd* and *headless* argument unused in `amazon_robot_in_aws_world.py`. It seems to have been over-ridden?
+- [ ] Where did *slam_toolbox* in `/opt/ros/foxy/lib` come from?
 
 
 #### General questions
@@ -121,6 +128,7 @@ category: ""
 - [ ] https://mushr.io/tutorials/mushr_navigation_system/
 - [ ] https://github.com/BehaviorTree/Groot
 - [ ] https://github.com/osrf/subt_hello_world/
+- [ ] https://github.com/vmayoral/basic_reinforcement_learning/blob/master/tutorial7/README.md
 
 Others
 - [ ] https://github.com/AndrejOrsula/drl_grasping

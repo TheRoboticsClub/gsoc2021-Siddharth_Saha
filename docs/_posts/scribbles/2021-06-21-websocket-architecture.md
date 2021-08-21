@@ -11,6 +11,8 @@ category: ""
 <br />
 <br />
 
+#### Socket connections
+
 - Django webserver is served at port **8000**
 
 Inside _scripts/_ directory:
@@ -25,9 +27,11 @@ The remaining files are all inside the _static/exercises/_ directory of the resp
 - `ws_gui.js` connects to websocket at port **2303**
 
 
+#### Components
 
-For each exercise there are two sides: the python part and the html part. They are connected in runtime through websockets (code_ws and gui_ws). For instance, in the Control Position drone exercise the html part is here: (a) https://github.com/JdeRobot/RoboticsAcademy/tree/master/exercises/templates/exercises/position_control
+For each exercise there are two sides: the python part and the html part. They are connected in runtime through websockets (code_ws and gui_ws). For instance, in the Control Position drone exercise:
 
-and the python part is here: (b) https://github.com/JdeRobot/RoboticsAcademy/tree/master/exercises/static/exercises/position_control/web-template
+- the html part is here: [https://github.com/JdeRobot/RoboticsAcademy/tree/master/exercises/templates/exercises/position_control](https://github.com/JdeRobot/RoboticsAcademy/tree/master/exercises/templates/exercises/position_control)
+- the python part is here: [https://github.com/JdeRobot/RoboticsAcademy/tree/master/exercises/static/exercises/position_control/web-template](https://github.com/JdeRobot/RoboticsAcademy/tree/master/exercises/static/exercises/position_control/web-template)
 
-the exercise.html and exercise.py are connected at runtime through websockets
+The `exercise.html` and `exercise.py` (in the above locations) are connected at runtime through websockets.

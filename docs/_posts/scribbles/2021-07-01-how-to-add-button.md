@@ -11,4 +11,4 @@ category: ""
 <br />
 <br />
 
-All necessary changes can be seen on [this commit page](https://github.com/trunc8/RoboticsAcademy/commit/5f0d892cf41a019486e9a17c2ee2cffc05c3bd3a)
+All necessary changes are meticulously highlighted on [this commit page](https://github.com/trunc8/RoboticsAcademy/commit/5f0d892cf41a019486e9a17c2ee2cffc05c3bd3a)

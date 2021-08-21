@@ -13,15 +13,29 @@ category: milestones
 
 ### Summary
 
-Pull Request | Solves Issue | Description
---- | --- | ---
-[#1046][] | [#1045][] | Updated url & version of VirtualGL in Dockerfile-2.4.base
-[#1047][] | [#1045][] | Updated url and version of VirtualGL in Dockerfile-noetic-3.1
-[#1074][] | [#5][], [#7][] and [#796][] | New RADI-4.0.0 for ROS2; [Initial demo of ROS2 Foxy RADI](https://www.youtube.com/watch?v=61k0kLDCaqg) with tb3_teleop exercise; [Final demo of ROS2 RADI](https://www.youtube.com/watch?v=L1PU13AawNE) inside the Turtlebot3 World Environment
-[#1094][] | [#6][] and [#801][] | RViz2 web template for ROS2 RADI; [Demo of RViz2 Template](https://www.youtube.com/watch?v=myTJV5xwdaA) in RADI 4.0 with map building using cartographer
+Pull Request | Solves Issue | Description | More
+--- | --- | --- | ---
+[#3][] | [#2][] | ROS2 Foxy inside Docker container | [README]
+[#80][] | [#79][] | Fix to enable amazon_robot_controller package to successfully build | [Week 2 blog][]
+[#82][] | [#81][] | Fix to successfully build amazon_robot_rviz_plugins | [Week 2 blog][]
+[#1046][] | [#1045][] | Updated url & version of VirtualGL in Dockerfile-2.4.base | -
+[#1047][] | [#1045][] | Updated url and version of VirtualGL in Dockerfile-noetic-3.1 | -
+[#1074][] | [#5][], [#7][] and [#796][] | New RADI-4.0.0 for ROS2; [Initial demo of ROS2 Foxy RADI](https://www.youtube.com/watch?v=61k0kLDCaqg) with tb3_teleop exercise; [Final demo of ROS2 RADI](https://www.youtube.com/watch?v=L1PU13AawNE) inside the Turtlebot3 World Environment | [Week 5 blog][]
+[#1094][] | [#6][] and [#801][] | RViz2 web template for ROS2 RADI; [Demo of RViz2 Template](https://www.youtube.com/watch?v=myTJV5xwdaA) in RADI 4.0 with map building using cartographer | [Week 6 blog][]
 {:.styled-table}
 
 
+
+[#1]: https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/issues/1 "Issue #1"
+[#2]: https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/issues/2 "Issue #2"
+[gsoc blog site]: https://theroboticsclub.github.io/gsoc2021-Siddharth_Saha/
+[#3]: https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/pull/3 "Pull #3"
+[README]: https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/blob/main/README.md#steps-to-replicate
+
+[#79]: https://github.com/JdeRobot/CustomRobots/issues/79 "Issue #79"
+[#81]: https://github.com/JdeRobot/CustomRobots/issues/81 "Issue #81"
+[#80]: https://github.com/JdeRobot/CustomRobots/pull/80 "Pull #80"
+[#82]: https://github.com/JdeRobot/CustomRobots/pull/82 "Pull #82"
 
 
 
@@ -43,3 +57,10 @@ Pull Request | Solves Issue | Description
 
 [#8]: https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/issues/8 "Issue #8"
 [#1126]: https://github.com/JdeRobot/RoboticsAcademy/issues/1126 "Issue #1126"
+
+
+
+
+[Week 2 blog]: {{ site.baseurl }}{% post_url /milestones/2021-06-09-week-2 %}
+[Week 5 blog]: {{ site.baseurl }}{% post_url /milestones/2021-06-30-week-5 %}
+[Week 6 blog]: {{ site.baseurl }}{% post_url /milestones/2021-07-07-week-6 %}

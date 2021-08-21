@@ -1,12 +1,17 @@
 .not-found-container {
+  padding: 1px 0px 1px 0px;
   margin: 10px auto;
-  max-width: 600px;
+  max-width: 500px;
   text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
 }
 
 h1.not-found-title {
-  margin: 30px 0;
+  margin: 20px 0 10px 0;
   font-size: 4em;
+  font-family: serif;
+  color: #336;
   line-height: 1;
   letter-spacing: -1px;
 }

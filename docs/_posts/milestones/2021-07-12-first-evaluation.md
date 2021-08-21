@@ -20,7 +20,7 @@ Pull Request | Solves Issue | Description | More
 [#82][] | [#81][] | Fix to successfully build amazon_robot_rviz_plugins | [Week 2 blog][]
 [#1046][] | [#1045][] | Updated url & version of VirtualGL in Dockerfile-2.4.base | -
 [#1047][] | [#1045][] | Updated url and version of VirtualGL in Dockerfile-noetic-3.1 | -
-[#1074][] | [#5][], [#7][] and [#796][] | New RADI-4.0.0 for ROS2; [Initial demo of ROS2 Foxy RADI](https://www.youtube.com/watch?v=61k0kLDCaqg) with tb3_teleop exercise; [Final demo of ROS2 RADI](https://www.youtube.com/watch?v=L1PU13AawNE) inside the Turtlebot3 World Environment | [Week 5 blog][]
+[#1074][] | [#5][], [#7][] and [#796][] | New RADI-4.0.0 for ROS2; [Initial demo of ROS2 Foxy RADI](https://www.youtube.com/watch?v=61k0kLDCaqg) with tb3_teleop exercise; [Final demo of ROS2 RADI](https://www.youtube.com/watch?v=L1PU13AawNE) inside the Turtlebot3 World Environment | [Week 4 blog][], [Week 5 blog][]
 [#1094][] | [#6][] and [#801][] | RViz2 web template for ROS2 RADI; [Demo of RViz2 Template](https://www.youtube.com/watch?v=myTJV5xwdaA) in RADI 4.0 with map building using cartographer | [Week 6 blog][]
 {:.styled-table}
 
@@ -62,5 +62,6 @@ Pull Request | Solves Issue | Description | More
 
 
 [Week 2 blog]: {{ site.baseurl }}{% post_url /milestones/2021-06-09-week-2 %}
+[Week 4 blog]: {{ site.baseurl }}{% post_url /milestones/2021-06-23-week-4 %}#progress-on-the-issue
 [Week 5 blog]: {{ site.baseurl }}{% post_url /milestones/2021-06-30-week-5 %}
 [Week 6 blog]: {{ site.baseurl }}{% post_url /milestones/2021-07-07-week-6 %}

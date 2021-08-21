@@ -20,7 +20,7 @@ category: ""
 - [x] Update Meet 2 minutes
 - [x] Update Meet 3 minutes
 - [x] Convert tasks to issues
-- [ ] Complete #11, #12, Final Report
+- [x] Complete #11, #12, Final Report
 - [x] Complete Nav2 Concepts
 - [x] Initiate RADI GUI in ROS2
 - [x] File the virtualgl issue on upstream repo
@@ -41,14 +41,16 @@ category: ""
 - [ ] Imbibe the new manager changes into Foxy
 - [ ] Add video to week 7-8 blog (goal navigation)
 - [ ] Add video to week 9 blog (waypoint navigation)
-- [ ] Add my name to amazon single warehouse exercise
-- [ ] Expand on week 2 blog from the PR's
+- [x] Add my name to amazon single warehouse exercise
+- [x] Expand on week 2 blog from the PR's
 - [x] Incorporate Table of contents
 - [x] Fix amazon_robot_controller after pulling the latest changes (Err on the side of caution)
 - [ ] Add to blog the issues explained in CustomRobots [Issue 81](https://github.com/JdeRobot/CustomRobots/issues/81), [Issue 79](https://github.com/JdeRobot/CustomRobots/issues/79), and [Issue 93](https://github.com/JdeRobot/CustomRobots/issues/93)
 - [ ] Add to week-9 blog "The complete breakdown of the issue can be seen in scribble xx. For reference, the crux of the issue is in these error logs..."
-- [ ] Add blog links for each PR in first eval
+- [x] Add blog links for each PR in first eval
 - [ ] Begin tabulating PRs for final eval
+- [ ] Club together small blogs and List the readings in the week 3 blog
+- [ ] Add timer to the RADI
 
 
 #### Notes
@@ -62,6 +64,8 @@ category: ""
     + Remember to `git submodule update --init --recursive`!!
     + Re-sourcing not needed after `colcon build`
     + `colcon build`!! after modifying world file
+    + `export RCUTILS_COLORIZED_OUTPUT=1 # Forcing colorization`
+    + `export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message} ({function_name}() at {file_name}:{line_number})"`
 - Consider
     + Avoid the rsync mess in my Dockerfile
     + Rviz config based window sizing can break when the browser size is small
@@ -77,6 +81,7 @@ category: ""
     + Can add *inflation_radius* below `plugin: "nav2_costmap_2d::InflationLayer"`
     + Update git submodules to latest commit ID: `git submodule update --recursive --remote`
     + For each `DeclareLaunchArgument()` there exists a `LaunchConfiguration()`, which allows the launch variable's value to be used inside the python launch file
+    + Learnt about lambda functions
 
 
 #### TODO's commented inside code
@@ -92,7 +97,7 @@ category: ""
 - [ ] In colcon, what are `DCMAKE_BUILD_TYPE` and similar flags?
 - [ ] `turtlebot3_world.launch.py` uses *gzserver.launch.py* and *gzserver.launch.py*. Is it any different from the *start_gazebo_server_cmd* and *start_gazebo_client_cmd* used in `amazon_robot_in_aws_world.py`?
 - [ ] *declare_simulator_cmd* and *headless* argument unused in `amazon_robot_in_aws_world.py`. It seems to have been over-ridden?
-- [ ] Where did *slam_toolbox* in `/opt/ros/foxy/lib` come from?
+- [x] Where did *slam_toolbox* in `/opt/ros/foxy/lib` come from? *Answer: Each of "ros-foxy-nav2-bringup ros-foxy-slam-toolbox ros-foxy-turtlebot3 ros-foxy-turtlebot3-navigation2" get installed together*
 
 
 #### General questions
@@ -302,4 +307,75 @@ export DISPLAY=:0; gzclient --verbose
 #### start_console
 ```sh
 export DISPLAY=:1; xterm -geometry 400x400 -fa 'Monospace' -fs 10 -bg black -fg white
+```
+
+
+
+
+### Modifications
+
+#### slam_toolbox
+> config/mapper_params_online_sync.yaml
+
+```yaml
+    map_file_name: amazon_15m_map
+    #map_start_pose: [0.0, 0.0, 0.0]
+    map_start_at_dock: true
+```
+#### amazon_robot_bringup
+> launch/slam_launch.py
+
+```xml
+    start_map_saver_server_cmd = Node(
+            package='nav2_map_server',
+            executable='map_saver_server',
+            output='screen',
+            parameters=[configured_params])
+```
+```xml
+    start_lifecycle_manager_cmd = Node(
+            package='nav2_lifecycle_manager',
+            executable='lifecycle_manager',
+            name='lifecycle_manager_slam',
+            output='screen',
+            parameters=[{'use_sim_time': use_sim_time},
+                        {'autostart': autostart},
+                        {'node_names': lifecycle_nodes}])
+```
+
+> launch/bringup_launch.py
+
+Added `UnlessCondition`
+
+> launch/amazon_robot_in_aws_world.py
+
+Enable SLAM
+```xml
+    declare_slam_cmd = DeclareLaunchArgument(
+        'slam',
+        default_value='True',
+        description='Whether run a SLAM')
+```
+
+For robot description warning: [robot_description_ref](https://docs.ros.org/en/foxy/Tutorials/URDF/Using-URDF-with-Robot-State-Publisher.html)
+```xml
+    with open(urdf, 'r') as infp:
+        robot_desc = infp.read()
+
+    start_robot_state_publisher_cmd = Node(
+        condition=IfCondition(use_robot_state_pub),
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        name='robot_state_publisher',
+        namespace=namespace,
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc}],
+        remappings=remappings,
+        arguments=[urdf])
+```
+
+
+To fix oscillating robot problem
+```xml
+                                    'z_pose': '0.5',
 ```

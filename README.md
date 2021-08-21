@@ -39,6 +39,7 @@ ros2 run demo_nodes_py listener
 ### Outside of Docker enviroment
 cd ~/gsoc2021-Siddharth_Saha
 git submodule update --init --recursive
+git submodule update --recursive --remote
 ./run
 
 ### Inside Docker enviroment now

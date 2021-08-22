@@ -26,8 +26,40 @@ Pull Request | Solves Issue | Description | More
 [#1][] | [#10][] | Modified the `no_roof_small_warehouse.world` | [Week 10 blog][]
 [#92][] | [#91][] and [#10][] | Updated git submodule *aws-robomaker-small-warehouse-world* | [Week 10 blog][]
 [#94][] | [#93][], [#12][], and [#13][] | Fixed Behavior Tree in Amazon warehouse package | [Week 9 blog][], [Week 10 blog][]
-{:.styled-table}
+{:.styled-table}  
+<br/>
 
+
+#### On DockerHub
+
+Tag | Linked PR | Description | Introduces Exercises
+--- | --- | --- | ---
+[4.0.0][] | [#1074][] | First RADI image for ROS2 | TurtleBot3 Teleop
+[4.1.0][] | [#1094][] | RViz2 web template for ROS2 RADI | Turtlebot3 Map Building
+[4.2.0][] | [#1184][] | Introduces the first Amazon warehouse exercise | Amazon warehouse Single Robot
+{:.styled-table}  
+<br/>
+
+#### Working Product
+Execute the following command to run RADI-4.2.0
+```sh
+docker run -it \
+      --rm \
+      -v /tmp/.X11-unix:/tmp/.X11-unix \
+      --name foxy_radi_container \
+      -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 6081:6081 -p 1108:1108 \
+      jderobot/robotics-academy:4.2.0 ./start.sh
+```
+Replace with :
+
+- `jderobot/robotics-academy:4.1.0` to examine RADI-4.1.0
+- `jderobot/robotics-academy:4.0.0` to examine RADI-4.0.0
+
+
+
+[4.0.0]: https://hub.docker.com/layers/jderobot/robotics-academy/4.0.0/images/sha256-68ea418131b08727a340519ebb30e66da879be0e990d84be066d38370b52234d?context=explore
+[4.1.0]: https://hub.docker.com/layers/jderobot/robotics-academy/4.1.0/images/sha256-6279140bb8103f8f0521c674bef51c8b602fd866fda7c877d189a6b21f17e5f3?context=explore
+[4.2.0]: https://hub.docker.com/layers/jderobot/robotics-academy
 
 
 [gsoc blog site]: https://theroboticsclub.github.io/gsoc2021-Siddharth_Saha/

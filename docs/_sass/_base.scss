@@ -103,8 +103,14 @@ h6 {
   font-family: "Futura", sans-serif;
 }
 
+// Not sure if the below block makes any difference
 h4 {
   font-size: 12px;
+}
+
+// Ensures that h5 is larger than normal text
+h5 {
+  font-size: 16px;
 }
 
 /**

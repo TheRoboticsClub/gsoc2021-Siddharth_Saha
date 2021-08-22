@@ -29,13 +29,13 @@ Pull Request | Solves Issue | Description | More
 [#1]: https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/issues/1 "Issue #1"
 [#2]: https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/issues/2 "Issue #2"
 [gsoc blog site]: https://theroboticsclub.github.io/gsoc2021-Siddharth_Saha/
-[#3]: https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/pull/3 "Pull #3"
+[#3]: https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/pull/3 "Pull request #3"
 [README]: https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/blob/main/README.md#steps-to-replicate
 
 [#79]: https://github.com/JdeRobot/CustomRobots/issues/79 "Issue #79"
 [#81]: https://github.com/JdeRobot/CustomRobots/issues/81 "Issue #81"
-[#80]: https://github.com/JdeRobot/CustomRobots/pull/80 "Pull #80"
-[#82]: https://github.com/JdeRobot/CustomRobots/pull/82 "Pull #82"
+[#80]: https://github.com/JdeRobot/CustomRobots/pull/80 "Pull request #80"
+[#82]: https://github.com/JdeRobot/CustomRobots/pull/82 "Pull request #82"
 
 
 

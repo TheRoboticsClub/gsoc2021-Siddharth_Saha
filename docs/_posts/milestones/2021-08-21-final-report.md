@@ -43,6 +43,9 @@ Replace with :
 
 
 ### Videos
+
+
+
 *Demo of RViz2 Template in RADI 4.1.0 with map building using cartographer*  
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/myTJV5xwdaA" 
@@ -58,6 +61,23 @@ frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>  
 <br />
+
+*Demo of Waypoint mode Navigation in Amazon Warehouse Single Robot Exercise (with AMCL Localization)*  
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/yB1ufIG57Ns" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+<br/>
+
+*Demo of Waypoint mode Navigation in Amazon Warehouse Single Robot Exercise (with SLAM Toolbox)*  
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/EiBdNQctMsg" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+<br/>
+
 
 
 ### Summary

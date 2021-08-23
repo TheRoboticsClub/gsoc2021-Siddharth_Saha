@@ -12,16 +12,16 @@ category: milestones
 <br />
 
 #### Table of Contents
-
-- [Final deliverables]()
+- [Final deliverables](#final-deliverables)
     * [Working Product](#working-product)
-- [Videos]()
-- [Timeline]()
+- [Videos](#videos)
 - [Summary](#summary)
     * [On GitHub](#on-github)
     * [On DockerHub](#on-dockerhub)
-
-- [Experience]()
+- [Future Work](#future-work)
+    * [Integration of SLAM](#integration-of-slam)
+    * [Additional Features](#additional-features)
+- [Learnings from the GSoC Experience](#learnings-from-the-gsoc-experience)
 - [Acknowledgement](#acknowledgement)
 
 
@@ -43,7 +43,7 @@ Replace with :
 
 
 ### Videos
-*Demo of RViz2 Template in RADI 4.0 with map building using cartographer*  
+*Demo of RViz2 Template in RADI 4.1.0 with map building using cartographer*  
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/myTJV5xwdaA" 
 frameborder="0" 
@@ -51,7 +51,7 @@ allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 <br />
 
-*Demo of ROS2 Foxy RADI with tb3_teleop exercise inside the Turtlebot3 World Environment*
+*Demo of the new ROS2 Foxy RADI with tb3_teleop exercise inside the Turtlebot3 World Environment*
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/L1PU13AawNE" 
 frameborder="0" 
@@ -89,6 +89,34 @@ Tag | Linked PR | Description | Introduces Exercises
 [4.2.0][] | [#1184][] | Introduces the first Amazon warehouse exercise | Amazon warehouse Single Robot
 {:.styled-table}  
 <br/>
+
+
+### Future Work
+#### Integration of SLAM
+There's significant amount of unpushed work that introduces Simultaneous Localization and Mapping to the Amazon Warehouse exercise. The modifications are highlighted in the [Roughwork][] blog.
+
+
+#### Additional Features
+Features lacking in the ROS2 Foxy RADI including *Timer*, *Code Editor*, *Pause/Resume* buttons.
+
+
+### Learnings from the GSoC Experience
+A significant amount of time is devoted in getting existing software packages to do what you want to achieve, as compared to writing beautiful code from scratch. I had earlier believed that GSoC would be more of writing code. I have also learnt that real-life programming jobs will be similar to my GSoC experience in this respect.
+
+More specifically to my domain, I had the opportunity to deep dive into fantastic robotics navigation packages and understand how they work. I have also significantly improved my skills in Git and multi-threaded programming.
+
+I feel GSoC gave me a taste of contributing code to a robotics org and affirm that this is what I want to pursue in the future. In addition, it has allowed me to interact with fabulous members of the open-souce community.
+
+
+### Acknowledgement
+Gratitude towards my mentors Pankhuri and Shreyas, who helped to delineate the direction of work during our meets and being available outside of meet hours as well. Their help was more than just the project, narrating their practical experiences at work and at grad school, from which I have learnt a lot.
+
+Thanks to Pedro, Manuel and Chandan (co-GSoCer) for testing my work.
+
+Ultimately, heartfelt gratitude towards Prof. José Marı́a. Sir's kind words, through the duration of GSoC, on my work have been very motivating. The discussions on the roboticsacademy developers' channel with Sir have been very helpful to me as well.
+
+
+
 
 
 
@@ -147,22 +175,4 @@ Tag | Linked PR | Description | Introduces Exercises
 [Week 7-8 blog]: {{ site.baseurl }}{% post_url /milestones/2021-07-21-week-7-8 %}
 [Week 9 blog]: {{ site.baseurl }}{% post_url /milestones/2021-07-28-week-9 %}
 [Week 10 blog]: {{ site.baseurl }}{% post_url /milestones/2021-08-04-week-10 %}
-
-
-
-
-
-### Learnings from the GSoC Experience
-A significant amount of time is devoted in getting existing software packages to do what you want to achieve, as compared to writing beautiful code from scratch. I had earlier believed that GSoC would be more of writing code. I have also learnt that real-life programming jobs will be similar to my GSoC experience in this respect.
-
-More specifically to my domain, I had the opportunity to deep dive into fantastic robotics navigation packages and understand how they work. I have also significantly improved my skills in Git and multi-threaded programming.
-
-I feel GSoC gave me a taste of contributing code to a robotics org and affirm that this is what I want to pursue in the future. In addition, it has allowed me to interact with fabulous members of the open-souce community.
-
-
-### Acknowledgement
-Gratitude towards my mentors Pankhuri and Shreyas, who helped to delineate the direction of work during our meets and being available outside of meet hours as well. Their help was more than just the project, narrating their practical experiences at work and at grad school, from which I have learnt a lot.
-
-Thanks to Pedro, Manuel and Chandan (co-GSoCer) for testing my work.
-
-Ultimately, heartfelt gratitude towards Prof. José Marı́a. Sir's kind words, through the duration of GSoC, on my work have been very motivating. The discussions on the roboticsacademy developers' channel with Sir have been very helpful to me as well.
+[Roughwork]: {{ site.baseurl }}{% post_url /scribbles/2021-05-17-roughwork %}#modifications

@@ -11,8 +11,24 @@ category: milestones
 <br />
 <br />
 
-### Summary
+#### Table of Contents
 
+- [Summary](#summary)
+    * [On GitHub](#on-github)
+    * [On DockerHub](#on-dockerhub)
+    * [Working Product](#working-product)
+- [Acknowledgement](#acknowledgement)
+
+
+
+
+
+
+
+
+
+
+### Summary
 #### On GitHub
 
 Pull Request | Solves Issue | Description | More
@@ -61,7 +77,7 @@ Replace with :
 
 [4.0.0]: https://hub.docker.com/layers/jderobot/robotics-academy/4.0.0/images/sha256-68ea418131b08727a340519ebb30e66da879be0e990d84be066d38370b52234d?context=explore
 [4.1.0]: https://hub.docker.com/layers/jderobot/robotics-academy/4.1.0/images/sha256-6279140bb8103f8f0521c674bef51c8b602fd866fda7c877d189a6b21f17e5f3?context=explore
-[4.2.0]: https://hub.docker.com/layers/jderobot/robotics-academy
+[4.2.0]: https://hub.docker.com/layers/jderobot/robotics-academy/4.2.0/images/sha256-5b5c561540e21a2210f95f6363133a097e6755654ae9c4dc9d07d1aa8104fdc2?context=explore
 
 
 [gsoc blog site]: https://theroboticsclub.github.io/gsoc2021-Siddharth_Saha/
@@ -112,3 +128,15 @@ Replace with :
 [Week 7-8 blog]: {{ site.baseurl }}{% post_url /milestones/2021-07-21-week-7-8 %}
 [Week 9 blog]: {{ site.baseurl }}{% post_url /milestones/2021-07-28-week-9 %}
 [Week 10 blog]: {{ site.baseurl }}{% post_url /milestones/2021-08-04-week-10 %}
+
+
+
+
+
+
+
+
+
+
+### Acknowledgement
+Gratitude towards my mentors Pankhuri and Shreyas, who helped to delineate the direction of work during our meets and being available outside of meet hours as well. Their help was more than just the project, narrating their practical experiences at work and at grad school, from which I have learnt a lot. Thanks to Pedro, Manuel and Chandan (co-GSoCer) for testing my work. Ultimately, heartfelt gratitude towards Prof. José Marı́a. Sir's kind words, through the duration of GSoC, on my work have been very motivating. The discussions on the roboticsacademy developers' channel with Sir have been very helpful to me as well.

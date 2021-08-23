@@ -87,8 +87,6 @@ docker run -it \
 [#1126]: https://github.com/JdeRobot/RoboticsAcademy/issues/1126 "Issue #1126"
 
 
-
-
 [Week 2 blog]: {{ site.baseurl }}{% post_url /milestones/2021-06-09-week-2 %}
 [Week 4 blog]: {{ site.baseurl }}{% post_url /milestones/2021-06-23-week-4 %}#progress-on-the-issue
 [Week 5 blog]: {{ site.baseurl }}{% post_url /milestones/2021-06-30-week-5 %}

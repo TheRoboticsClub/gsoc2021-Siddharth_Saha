@@ -47,7 +47,7 @@ docker run -it \
 
 [4.0.0]: https://hub.docker.com/layers/jderobot/robotics-academy/4.0.0/images/sha256-68ea418131b08727a340519ebb30e66da879be0e990d84be066d38370b52234d?context=explore
 [4.1.0]: https://hub.docker.com/layers/jderobot/robotics-academy/4.1.0/images/sha256-6279140bb8103f8f0521c674bef51c8b602fd866fda7c877d189a6b21f17e5f3?context=explore
-[4.2.0]: https://hub.docker.com/layers/jderobot/robotics-academy
+[4.2.0]: https://hub.docker.com/layers/jderobot/robotics-academy/4.2.0/images/sha256-5b5c561540e21a2210f95f6363133a097e6755654ae9c4dc9d07d1aa8104fdc2?context=explore
 
 
 [gsoc blog site]: https://theroboticsclub.github.io/gsoc2021-Siddharth_Saha/

@@ -123,7 +123,7 @@ category: ""
 
 #### Resources to read
 - [x] https://github.com/mlherd/navigation2/tree/new-tutorials/doc/tb3_tutorial
-- [ ] https://github.com/osrf/subt_hello_world/blob/master/posts/04_navigation.md
+- [x] https://github.com/osrf/subt_hello_world/blob/master/posts/04_navigation.md
 
 #### Possible things to play with
 - [x] https://github.com/SteveMacenski/nav2_rosdevday_2021
@@ -131,7 +131,7 @@ category: ""
 - [x] https://github.com/aws-robotics/aws-robomaker-small-warehouse-world
 - [ ] https://github.com/sea-bass/turtlebot3_behavior_demos
 - [ ] https://mushr.io/tutorials/mushr_navigation_system/
-- [ ] https://github.com/BehaviorTree/Groot
+- [x] https://github.com/BehaviorTree/Groot
 - [ ] https://github.com/osrf/subt_hello_world/
 - [ ] https://github.com/vmayoral/basic_reinforcement_learning/blob/master/tutorial7/README.md
 
@@ -298,44 +298,44 @@ docker exec -it noetic_jde_container bash
 
 ```
 
-#### xserver_cmd
+##### xserver_cmd
 ```sh
 /usr/bin/Xorg -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./xdummy.log -config ./xorg.conf :0
 ```
 
-#### console_xserver_cmd
+##### console_xserver_cmd
 ```sh
 /usr/bin/Xorg -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./console_xdummy.log -config ./xorg.conf :1
 ```
 
-#### host_cmd
+##### host_cmd
 ```sh
 python3 /RoboticsAcademy/exercises/follow_line/web-template/exercise-noetic.py 0.0.0.0
 ```
 
-#### roslaunch_cmd
+##### roslaunch_cmd
 ```sh
 /opt/ros/noetic/bin/roslaunch ./RoboticsAcademy/exercises/follow_line/web-template/launch/simple_line_follower_ros_headless.launch
 ```
 
-#### start_vnc (for gzclient)
+##### start_vnc (for gzclient)
 ```sh
 x11vnc -display :0 -nopw -forever -xkb -bg -rfbport 5900
 /noVNC/utils/launch.sh --listen 6080 --vnc localhost:5900
 ```
 
-#### start_vnc (for console)
+##### start_vnc (for console)
 ```sh
 x11vnc -display :1 -nopw -forever -xkb -bg -rfbport 5901
 /noVNC/utils/launch.sh --listen 1108 --vnc localhost:5901
 ```
 
-#### start_gzclient
+##### start_gzclient
 ```sh
 export DISPLAY=:0; gzclient --verbose
 ```
 
-#### start_console
+##### start_console
 ```sh
 export DISPLAY=:1; xterm -geometry 400x400 -fa 'Monospace' -fs 10 -bg black -fg white
 ```

@@ -13,19 +13,51 @@ category: milestones
 
 #### Table of Contents
 
+- [Final deliverables]()
+    * [Working Product](#working-product)
+- [Videos]()
+- [Timeline]()
 - [Summary](#summary)
     * [On GitHub](#on-github)
     * [On DockerHub](#on-dockerhub)
-    * [Working Product](#working-product)
+
+- [Experience]()
 - [Acknowledgement](#acknowledgement)
 
 
+### Final deliverables
+#### Working Product
+Execute the following command to run RADI-4.2.0
+```sh
+docker run -it \
+      --rm \
+      -v /tmp/.X11-unix:/tmp/.X11-unix \
+      --name foxy_radi_container \
+      -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 6081:6081 -p 1108:1108 \
+      jderobot/robotics-academy:4.2.0 ./start.sh
+```
+Replace with :
+
+- `jderobot/robotics-academy:4.1.0` to examine RADI-4.1.0
+- `jderobot/robotics-academy:4.0.0` to examine RADI-4.0.0
 
 
+### Videos
+*Demo of RViz2 Template in RADI 4.0 with map building using cartographer*  
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/myTJV5xwdaA" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+<br />
 
-
-
-
+*Demo of ROS2 Foxy RADI with tb3_teleop exercise inside the Turtlebot3 World Environment*
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/L1PU13AawNE" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>  
+<br />
 
 
 ### Summary
@@ -58,20 +90,7 @@ Tag | Linked PR | Description | Introduces Exercises
 {:.styled-table}  
 <br/>
 
-#### Working Product
-Execute the following command to run RADI-4.2.0
-```sh
-docker run -it \
-      --rm \
-      -v /tmp/.X11-unix:/tmp/.X11-unix \
-      --name foxy_radi_container \
-      -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 6081:6081 -p 1108:1108 \
-      jderobot/robotics-academy:4.2.0 ./start.sh
-```
-Replace with :
 
-- `jderobot/robotics-academy:4.1.0` to examine RADI-4.1.0
-- `jderobot/robotics-academy:4.0.0` to examine RADI-4.0.0
 
 
 
@@ -133,10 +152,17 @@ Replace with :
 
 
 
+### Learnings from the GSoC Experience
+A significant amount of time is devoted in getting existing software packages to do what you want to achieve, as compared to writing beautiful code from scratch. I had earlier believed that GSoC would be more of writing code. I have also learnt that real-life programming jobs will be similar to my GSoC experience in this respect.
 
+More specifically to my domain, I had the opportunity to deep dive into fantastic robotics navigation packages and understand how they work. I have also significantly improved my skills in Git and multi-threaded programming.
 
-
+I feel GSoC gave me a taste of contributing code to a robotics org and affirm that this is what I want to pursue in the future. In addition, it has allowed me to interact with fabulous members of the open-souce community.
 
 
 ### Acknowledgement
-Gratitude towards my mentors Pankhuri and Shreyas, who helped to delineate the direction of work during our meets and being available outside of meet hours as well. Their help was more than just the project, narrating their practical experiences at work and at grad school, from which I have learnt a lot. Thanks to Pedro, Manuel and Chandan (co-GSoCer) for testing my work. Ultimately, heartfelt gratitude towards Prof. José Marı́a. Sir's kind words, through the duration of GSoC, on my work have been very motivating. The discussions on the roboticsacademy developers' channel with Sir have been very helpful to me as well.
+Gratitude towards my mentors Pankhuri and Shreyas, who helped to delineate the direction of work during our meets and being available outside of meet hours as well. Their help was more than just the project, narrating their practical experiences at work and at grad school, from which I have learnt a lot.
+
+Thanks to Pedro, Manuel and Chandan (co-GSoCer) for testing my work.
+
+Ultimately, heartfelt gratitude towards Prof. José Marı́a. Sir's kind words, through the duration of GSoC, on my work have been very motivating. The discussions on the roboticsacademy developers' channel with Sir have been very helpful to me as well.

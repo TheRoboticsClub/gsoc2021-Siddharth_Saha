@@ -12,8 +12,8 @@ category: milestones
 <br />
 
 #### Table of Contents
-- [Final deliverables](#final-deliverables)
-    * [Working Product](#working-product)
+- [Project Overview](#project-overview)
+- [Working Product](#working-product)
 - [Videos](#videos)
 - [Summary](#summary)
     * [On GitHub](#on-github)
@@ -25,8 +25,15 @@ category: milestones
 - [Acknowledgement](#acknowledgement)
 
 
-### Final deliverables
-#### Working Product
+### Project Overview
+*Title*: Robotics Academy — ROS2-RADI and Amazon warehouse exercise in web-based template for ROS2
+
+Project objectives included creating Robotics Academy Docker Image (RADI) for ROS2, and exploring the application of Navigation2 features to the Amazon Warehouse Single Robot exercise.
+
+My project proposal can be found [here]({{ '/assets/pdf/JdeRobot_Proposal.pdf' | absolute_url }}).
+
+
+### Working Product
 Execute the following command to run RADI-4.2.0
 ```sh
 docker run -it \
@@ -44,7 +51,13 @@ Replace with :
 
 ### Videos
 
-
+*Demo of Amazon Warehouse Single Robot Exercise Deliveries with SLAM*  
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/RfW2hI_8j74" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+<br/>
 
 *Demo of RViz2 Template in RADI 4.1.0 with map building using cartographer*  
 <iframe width="560" height="315"
@@ -61,23 +74,6 @@ frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>  
 <br />
-
-*Demo of Waypoint mode Navigation in Amazon Warehouse Single Robot Exercise (with AMCL Localization)*  
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/yB1ufIG57Ns" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
-<br/>
-
-*Demo of Waypoint mode Navigation in Amazon Warehouse Single Robot Exercise (with SLAM Toolbox)*  
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/EiBdNQctMsg" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
-<br/>
-
 
 
 ### Summary

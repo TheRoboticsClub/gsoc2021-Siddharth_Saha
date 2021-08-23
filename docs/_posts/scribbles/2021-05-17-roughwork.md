@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "(Running) Rough work"
+title:  "Rough work"
 date:   2021-05-17 16:18:00 +0530
 blurb: ""
 og_image: /assets/img/content/placeholder-img/Banner.jpg

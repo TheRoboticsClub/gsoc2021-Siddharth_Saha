@@ -29,7 +29,6 @@ category: ""
 - [x] Add final Foxy RADI demo video to week 4
 - [x] Split Foxy Dockerfile into base Dockerfile and wrapper Dockerfile
 - [x] Add the ROS2 equivalent of this line `RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /catkin_ws; catkin build'` to Foxy Dockerfile for Amazon warehouse
-- [ ] Cleaning the `static/` directory files of tb3_teleop (minimal file desired)
 - [x] Cleaning some unnecessary functions in `manager-4.0.py`
 - [x] Debug amazon_robot_controller
 - [x] Initiate web template for amazon warehouse. Would require design decisions (like an Rviz iframe and button)
@@ -37,7 +36,7 @@ category: ""
 - [x] Merge PR of [RADI-4.0.0](https://github.com/JdeRobot/RoboticsAcademy/pull/1074)
 - [x] Clean amazon_warehouse template into a PR
 - [x] Take apart amazon_robot_controller to understand where the error arises
-- [ ] Catch up on the Slack discussions and solved issues on GitHub
+- [x] Catch up on the Slack discussions and solved issues on GitHub
 - [ ] Imbibe the new manager changes into Foxy
 - [x] Add video to week 7-8 blog (goal navigation)
 - [ ] Add video to week 9 blog (waypoint navigation)
@@ -45,13 +44,11 @@ category: ""
 - [x] Expand on week 2 blog from the PR's
 - [x] Incorporate Table of contents
 - [x] Fix amazon_robot_controller after pulling the latest changes (Err on the side of caution)
-- [ ] Add to blog the issues explained in CustomRobots [Issue 81](https://github.com/JdeRobot/CustomRobots/issues/81), [Issue 79](https://github.com/JdeRobot/CustomRobots/issues/79), and [Issue 93](https://github.com/JdeRobot/CustomRobots/issues/93)
-- [ ] Add to week-9 blog "The complete breakdown of the issue can be seen in scribble xx. For reference, the crux of the issue is in these error logs..."
+- [x] Add to blog the issues explained in CustomRobots [Issue 81](https://github.com/JdeRobot/CustomRobots/issues/81), [Issue 79](https://github.com/JdeRobot/CustomRobots/issues/79), and [Issue 93](https://github.com/JdeRobot/CustomRobots/issues/93)
 - [x] Add blog links for each PR in first eval
 - [x] Begin tabulating PRs for final eval
-- [ ] Club together small blogs and List the readings in the week 3 blog
 - [ ] Add timer to the RADI
-- [ ] DockerHub images- 4.1.0 (RViz2), 4.2.0 (Amazon warehouse)
+- [x] DockerHub images- 4.1.0 (RViz2), 4.2.0 (Amazon warehouse)
 - [ ] Update this [README](https://github.com/JdeRobot/RoboticsAcademy/tree/foxy/scripts)
 
 
@@ -359,14 +356,14 @@ export DISPLAY=:1; xterm -geometry 400x400 -fa 'Monospace' -fs 10 -bg black -fg 
 #### amazon_robot_bringup
 > launch/slam_launch.py
 
-```xml
+```py
     start_map_saver_server_cmd = Node(
             package='nav2_map_server',
             executable='map_saver_server',
             output='screen',
             parameters=[configured_params])
 ```
-```xml
+```py
     start_lifecycle_manager_cmd = Node(
             package='nav2_lifecycle_manager',
             executable='lifecycle_manager',
@@ -384,7 +381,7 @@ Added `UnlessCondition`
 > launch/amazon_robot_in_aws_world.py
 
 Enable SLAM
-```xml
+```py
     declare_slam_cmd = DeclareLaunchArgument(
         'slam',
         default_value='True',
@@ -392,7 +389,7 @@ Enable SLAM
 ```
 
 For robot description warning: [robot_description_ref](https://docs.ros.org/en/foxy/Tutorials/URDF/Using-URDF-with-Robot-State-Publisher.html)
-```xml
+```py
     with open(urdf, 'r') as infp:
         robot_desc = infp.read()
 
@@ -410,6 +407,6 @@ For robot description warning: [robot_description_ref](https://docs.ros.org/en/f
 
 
 To fix oscillating robot problem
-```xml
+```py
                                     'z_pose': '0.5',
 ```

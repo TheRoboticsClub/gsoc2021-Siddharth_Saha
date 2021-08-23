@@ -39,7 +39,7 @@ category: ""
 - [x] Take apart amazon_robot_controller to understand where the error arises
 - [ ] Catch up on the Slack discussions and solved issues on GitHub
 - [ ] Imbibe the new manager changes into Foxy
-- [ ] Add video to week 7-8 blog (goal navigation)
+- [x] Add video to week 7-8 blog (goal navigation)
 - [ ] Add video to week 9 blog (waypoint navigation)
 - [x] Add my name to amazon single warehouse exercise
 - [x] Expand on week 2 blog from the PR's
@@ -48,9 +48,11 @@ category: ""
 - [ ] Add to blog the issues explained in CustomRobots [Issue 81](https://github.com/JdeRobot/CustomRobots/issues/81), [Issue 79](https://github.com/JdeRobot/CustomRobots/issues/79), and [Issue 93](https://github.com/JdeRobot/CustomRobots/issues/93)
 - [ ] Add to week-9 blog "The complete breakdown of the issue can be seen in scribble xx. For reference, the crux of the issue is in these error logs..."
 - [x] Add blog links for each PR in first eval
-- [ ] Begin tabulating PRs for final eval
+- [x] Begin tabulating PRs for final eval
 - [ ] Club together small blogs and List the readings in the week 3 blog
 - [ ] Add timer to the RADI
+- [ ] DockerHub images- 4.1.0 (RViz2), 4.2.0 (Amazon warehouse)
+- [ ] Update this [README](https://github.com/JdeRobot/RoboticsAcademy/tree/foxy/scripts)
 
 
 #### Notes
@@ -71,6 +73,7 @@ category: ""
     + Rviz config based window sizing can break when the browser size is small
     + I could add timer in the utilities bar at the top
     + The modified urdf might cause problems during slam
+    + Cloning --single-branch in Dockerfile might reduce size
 - Learnt
     + "{goal}" is a blackboard variable
     + HAL: Hardware Abstraction Layer
@@ -253,6 +256,37 @@ cd /RoboticsAcademy/scripts && ./start.sh
 
 
 ```
+
+### Foxy (4.0.0)
+```sh
+docker run -it \
+      --rm \
+      -v /tmp/.X11-unix:/tmp/.X11-unix \
+      --name foxy_radi_container \
+      -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 \
+      jderobot/robotics-academy:4.0.0 ./start.sh
+```
+
+### Foxy (4.1.0)
+```sh
+docker run -it \
+      --rm \
+      -v /tmp/.X11-unix:/tmp/.X11-unix \
+      --name foxy_radi_container \
+      -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 6081:6081 -p 1108:1108 \
+      jderobot/robotics-academy:4.1.0 ./start.sh
+```
+
+### Foxy (4.2.0)
+```sh
+docker run -it \
+      --rm \
+      -v /tmp/.X11-unix:/tmp/.X11-unix \
+      --name foxy_radi_container \
+      -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 6081:6081 -p 1108:1108 \
+      jderobot/robotics-academy:4.2.0 ./start.sh
+```
+
 
 ### Developer's commands (Some are antiquated)
 ```sh

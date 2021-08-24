@@ -11,7 +11,8 @@ Progress Tracking
 - [Kanban board](https://github.com/TheRoboticsClub/gsoc2021-Siddharth_Saha/projects/1)
 - [Roughwork blogpost](https://theroboticsclub.github.io/gsoc2021-Siddharth_Saha/2021/05/17/roughwork#tasks)  
 
-
+### Demo
+![Amazon Warehouse Delivery](docs/assets/img/content/final-report/amazon-single-slam.gif)
 
 ### Steps to replicate
 *(The shell scripts take care not to create files or clutter outside the `~/gsoc2021-Siddharth_Saha` directory)*

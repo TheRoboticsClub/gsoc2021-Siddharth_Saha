@@ -7,7 +7,7 @@ og_image: /assets/img/content/placeholder-img/Banner.jpg
 category: milestones
 ---
 
-<img src="{{ "/assets/img/content/placeholder-img/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>
+<img src="{{ "/assets/img/content/final-report/amazon-single-slam.gif" | absolute_url }}" alt="amazon warehouse gif" class="post-pic"/>
 <br />
 <br />
 
@@ -125,11 +125,11 @@ I feel GSoC gave me a taste of contributing code to a robotics org and affirm th
 
 
 ### Acknowledgement
-Gratitude towards my mentors Pankhuri and Shreyas, who helped to delineate the direction of work during our meets and being available outside of meet hours as well. Their help was more than just the project, narrating their practical experiences at work and at grad school, from which I have learnt a lot.
+Gratitude towards my mentors [Pankhuri](https://github.com/pankhurivanjani) and [Shreyas](https://github.com/shreyasgokhale), who helped to delineate the direction of work during our meets and being available outside of meet hours as well. Their help was more than just the project, narrating their practical experiences at work and at grad school, from which I have learnt a lot.
 
-Thanks to Pedro, Manuel and Chandan (co-GSoCer) for testing my work.
+Thanks to [Pedro](https://github.com/pariaspe), [Manuel](https://github.com/ReyDoran), and [Chandan](https://github.com/predator4hack) (co-GSoCer) for testing my work.
 
-Ultimately, heartfelt gratitude towards Prof. José Marı́a. Sir's kind words, through the duration of GSoC, on my work have been very motivating. The discussions on the roboticsacademy developers' channel with Sir have been very helpful to me as well.
+Ultimately, heartfelt gratitude towards [Prof. José Marı́a](https://gsyc.urjc.es/jmplaza/) ([jmplaza](https://github.com/jmplaza)). Sir's kind words, through the duration of GSoC, on my work have been very motivating. The discussions on the roboticsacademy developers' channel with Sir have been very helpful to me as well.
 
 
 

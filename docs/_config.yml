@@ -19,6 +19,8 @@ header:
     # - name: CV
     #   slug: cv/Siddharth-Saha-CV.pdf
     - name: Blog
+    - name: <i class="fa fa-search"></i>
+      slug: search
 
 footer:
   contact:
